@@ -70,11 +70,13 @@ namespace SQL_UI_Maybe
             this.statListBoxUpdate = new System.Windows.Forms.ListBox();
             this.gameStatTypeListUpdate = new System.Windows.Forms.ListBox();
             this.gameStatListUpdate = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(860, 27);
+            this.button1.Location = new System.Drawing.Point(738, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 24);
             this.button1.TabIndex = 0;
@@ -85,7 +87,7 @@ namespace SQL_UI_Maybe
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(759, 62);
+            this.label1.Location = new System.Drawing.Point(825, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 1;
@@ -94,7 +96,7 @@ namespace SQL_UI_Maybe
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(850, 62);
+            this.label2.Location = new System.Drawing.Point(900, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 15);
             this.label2.TabIndex = 2;
@@ -109,9 +111,9 @@ namespace SQL_UI_Maybe
             "INSERT INTO",
             "DELETE FROM",
             "UPDATE"});
-            this.listBox1.Location = new System.Drawing.Point(22, 180);
+            this.listBox1.Location = new System.Drawing.Point(29, 113);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 94);
+            this.listBox1.Size = new System.Drawing.Size(152, 154);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -129,15 +131,15 @@ namespace SQL_UI_Maybe
             "Game",
             "Player",
             "Team"});
-            this.listBox2.Location = new System.Drawing.Point(176, 180);
+            this.listBox2.Location = new System.Drawing.Point(199, 113);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 94);
+            this.listBox2.Size = new System.Drawing.Size(153, 154);
             this.listBox2.TabIndex = 4;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(589, 154);
+            this.textBox1.Location = new System.Drawing.Point(589, 110);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(199, 23);
             this.textBox1.TabIndex = 5;
@@ -146,7 +148,7 @@ namespace SQL_UI_Maybe
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(850, 397);
+            this.button2.Location = new System.Drawing.Point(850, 221);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(217, 58);
             this.button2.TabIndex = 9;
@@ -168,7 +170,7 @@ namespace SQL_UI_Maybe
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(22, 49);
+            this.errorLabel.Location = new System.Drawing.Point(12, 49);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(58, 15);
             this.errorLabel.TabIndex = 11;
@@ -178,9 +180,10 @@ namespace SQL_UI_Maybe
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(374, 162);
+            this.label6.Font = new System.Drawing.Font("SF Movie Poster", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(374, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "label6";
             this.label6.Visible = false;
@@ -188,9 +191,10 @@ namespace SQL_UI_Maybe
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(374, 202);
+            this.label7.Font = new System.Drawing.Font("SF Movie Poster", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(375, 153);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "label7";
             this.label7.Visible = false;
@@ -198,9 +202,10 @@ namespace SQL_UI_Maybe
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(374, 239);
+            this.label8.Font = new System.Drawing.Font("SF Movie Poster", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(375, 190);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
+            this.label8.Size = new System.Drawing.Size(59, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "label8";
             this.label8.Visible = false;
@@ -208,9 +213,10 @@ namespace SQL_UI_Maybe
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(374, 275);
+            this.label9.Font = new System.Drawing.Font("SF Movie Poster", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(375, 226);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 15);
+            this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 15;
             this.label9.Text = "label9";
             this.label9.Visible = false;
@@ -218,16 +224,17 @@ namespace SQL_UI_Maybe
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(374, 308);
+            this.label10.Font = new System.Drawing.Font("SF Movie Poster", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(375, 259);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 15);
+            this.label10.Size = new System.Drawing.Size(64, 20);
             this.label10.TabIndex = 16;
             this.label10.Text = "label10";
             this.label10.Visible = false;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(589, 194);
+            this.textBox3.Location = new System.Drawing.Point(589, 150);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(199, 23);
             this.textBox3.TabIndex = 17;
@@ -236,7 +243,7 @@ namespace SQL_UI_Maybe
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(589, 231);
+            this.textBox4.Location = new System.Drawing.Point(589, 187);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(199, 23);
             this.textBox4.TabIndex = 18;
@@ -244,7 +251,7 @@ namespace SQL_UI_Maybe
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(589, 267);
+            this.textBox5.Location = new System.Drawing.Point(589, 223);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(199, 23);
             this.textBox5.TabIndex = 19;
@@ -252,7 +259,7 @@ namespace SQL_UI_Maybe
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(589, 300);
+            this.textBox6.Location = new System.Drawing.Point(589, 256);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(199, 23);
             this.textBox6.TabIndex = 20;
@@ -267,7 +274,7 @@ namespace SQL_UI_Maybe
             "Game_ID",
             "GameStatType_ID",
             "GameStat_Value"});
-            this.gameStatList.Location = new System.Drawing.Point(504, 216);
+            this.gameStatList.Location = new System.Drawing.Point(504, 172);
             this.gameStatList.Name = "gameStatList";
             this.gameStatList.Size = new System.Drawing.Size(120, 34);
             this.gameStatList.TabIndex = 21;
@@ -280,7 +287,7 @@ namespace SQL_UI_Maybe
             this.gameStatTypeList.Items.AddRange(new object[] {
             "GameStatType_ID",
             "GameStatType_Name"});
-            this.gameStatTypeList.Location = new System.Drawing.Point(504, 216);
+            this.gameStatTypeList.Location = new System.Drawing.Point(504, 172);
             this.gameStatTypeList.Name = "gameStatTypeList";
             this.gameStatTypeList.Size = new System.Drawing.Size(120, 34);
             this.gameStatTypeList.TabIndex = 22;
@@ -295,7 +302,7 @@ namespace SQL_UI_Maybe
             "Gametype_Game_ID",
             "StatType_ID",
             "Stat_Value"});
-            this.statList.Location = new System.Drawing.Point(504, 216);
+            this.statList.Location = new System.Drawing.Point(504, 172);
             this.statList.Name = "statList";
             this.statList.Size = new System.Drawing.Size(120, 34);
             this.statList.TabIndex = 23;
@@ -308,7 +315,7 @@ namespace SQL_UI_Maybe
             this.statTypeList.Items.AddRange(new object[] {
             "StatType_ID",
             "StatType_Name"});
-            this.statTypeList.Location = new System.Drawing.Point(504, 216);
+            this.statTypeList.Location = new System.Drawing.Point(504, 172);
             this.statTypeList.Name = "statTypeList";
             this.statTypeList.Size = new System.Drawing.Size(120, 34);
             this.statTypeList.TabIndex = 24;
@@ -321,7 +328,7 @@ namespace SQL_UI_Maybe
             "Gamemode_ID",
             "Game_ID",
             "Gametype_ExpectedTime"});
-            this.gameTypeList.Location = new System.Drawing.Point(504, 216);
+            this.gameTypeList.Location = new System.Drawing.Point(504, 172);
             this.gameTypeList.Name = "gameTypeList";
             this.gameTypeList.Size = new System.Drawing.Size(120, 34);
             this.gameTypeList.TabIndex = 25;
@@ -333,7 +340,7 @@ namespace SQL_UI_Maybe
             this.gamemodeList.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Gamemode_Name"});
-            this.gamemodeList.Location = new System.Drawing.Point(504, 216);
+            this.gamemodeList.Location = new System.Drawing.Point(504, 172);
             this.gamemodeList.Name = "gamemodeList";
             this.gamemodeList.Size = new System.Drawing.Size(120, 34);
             this.gamemodeList.TabIndex = 26;
@@ -345,7 +352,7 @@ namespace SQL_UI_Maybe
             this.gameList.Items.AddRange(new object[] {
             "Game_ID",
             "Game_Title"});
-            this.gameList.Location = new System.Drawing.Point(504, 216);
+            this.gameList.Location = new System.Drawing.Point(504, 172);
             this.gameList.Name = "gameList";
             this.gameList.Size = new System.Drawing.Size(120, 34);
             this.gameList.TabIndex = 27;
@@ -359,7 +366,7 @@ namespace SQL_UI_Maybe
             "Player_Username",
             "Team_ID",
             "Account_ID"});
-            this.playerList.Location = new System.Drawing.Point(504, 216);
+            this.playerList.Location = new System.Drawing.Point(504, 172);
             this.playerList.Name = "playerList";
             this.playerList.Size = new System.Drawing.Size(120, 34);
             this.playerList.TabIndex = 28;
@@ -372,7 +379,7 @@ namespace SQL_UI_Maybe
             "Team_ID",
             "Player_ID_Leader",
             "Team_Name"});
-            this.teamList.Location = new System.Drawing.Point(504, 216);
+            this.teamList.Location = new System.Drawing.Point(504, 172);
             this.teamList.Name = "teamList";
             this.teamList.Size = new System.Drawing.Size(120, 34);
             this.teamList.TabIndex = 29;
@@ -387,7 +394,7 @@ namespace SQL_UI_Maybe
             ">",
             "<=",
             ">="});
-            this.conditionsList.Location = new System.Drawing.Point(695, 216);
+            this.conditionsList.Location = new System.Drawing.Point(695, 172);
             this.conditionsList.Name = "conditionsList";
             this.conditionsList.Size = new System.Drawing.Size(45, 34);
             this.conditionsList.TabIndex = 30;
@@ -395,7 +402,7 @@ namespace SQL_UI_Maybe
             // 
             // deleteFromTextBox2
             // 
-            this.deleteFromTextBox2.Location = new System.Drawing.Point(794, 220);
+            this.deleteFromTextBox2.Location = new System.Drawing.Point(794, 176);
             this.deleteFromTextBox2.Name = "deleteFromTextBox2";
             this.deleteFromTextBox2.Size = new System.Drawing.Size(100, 23);
             this.deleteFromTextBox2.TabIndex = 32;
@@ -404,24 +411,24 @@ namespace SQL_UI_Maybe
             // thingToChangeLabel
             // 
             this.thingToChangeLabel.AutoSize = true;
-            this.thingToChangeLabel.Location = new System.Drawing.Point(374, 227);
+            this.thingToChangeLabel.Font = new System.Drawing.Font("SF Movie Poster", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.thingToChangeLabel.Location = new System.Drawing.Point(456, 183);
             this.thingToChangeLabel.Name = "thingToChangeLabel";
-            this.thingToChangeLabel.Size = new System.Drawing.Size(600, 15);
+            this.thingToChangeLabel.Size = new System.Drawing.Size(516, 16);
             this.thingToChangeLabel.TabIndex = 33;
-            this.thingToChangeLabel.Text = "Change                                                                        to " +
-    "                                              where                             " +
-    "                   =";
+            this.thingToChangeLabel.Text = "Change                                              to                           " +
+    "               where                                                =";
             // 
             // updateChangeTextBox
             // 
-            this.updateChangeTextBox.Location = new System.Drawing.Point(667, 223);
+            this.updateChangeTextBox.Location = new System.Drawing.Point(667, 179);
             this.updateChangeTextBox.Name = "updateChangeTextBox";
             this.updateChangeTextBox.Size = new System.Drawing.Size(100, 23);
             this.updateChangeTextBox.TabIndex = 34;
             // 
             // updateToTextBox
             // 
-            this.updateToTextBox.Location = new System.Drawing.Point(980, 224);
+            this.updateToTextBox.Location = new System.Drawing.Point(980, 180);
             this.updateToTextBox.Name = "updateToTextBox";
             this.updateToTextBox.Size = new System.Drawing.Size(100, 23);
             this.updateToTextBox.TabIndex = 35;
@@ -434,7 +441,7 @@ namespace SQL_UI_Maybe
             "Team_ID",
             "Player_ID_Leader",
             "Team_Name"});
-            this.teamListBoxUpdate.Location = new System.Drawing.Point(827, 220);
+            this.teamListBoxUpdate.Location = new System.Drawing.Point(827, 176);
             this.teamListBoxUpdate.Name = "teamListBoxUpdate";
             this.teamListBoxUpdate.Size = new System.Drawing.Size(120, 34);
             this.teamListBoxUpdate.TabIndex = 36;
@@ -448,7 +455,7 @@ namespace SQL_UI_Maybe
             "Player_Username",
             "Team_ID",
             "Account_ID"});
-            this.playerListBoxUpdate.Location = new System.Drawing.Point(827, 220);
+            this.playerListBoxUpdate.Location = new System.Drawing.Point(827, 176);
             this.playerListBoxUpdate.Name = "playerListBoxUpdate";
             this.playerListBoxUpdate.Size = new System.Drawing.Size(120, 34);
             this.playerListBoxUpdate.TabIndex = 37;
@@ -461,7 +468,7 @@ namespace SQL_UI_Maybe
             this.gameListBoxUpdate.Items.AddRange(new object[] {
             "Game_ID",
             "Game_Title"});
-            this.gameListBoxUpdate.Location = new System.Drawing.Point(827, 220);
+            this.gameListBoxUpdate.Location = new System.Drawing.Point(827, 176);
             this.gameListBoxUpdate.Name = "gameListBoxUpdate";
             this.gameListBoxUpdate.Size = new System.Drawing.Size(120, 34);
             this.gameListBoxUpdate.TabIndex = 38;
@@ -473,7 +480,7 @@ namespace SQL_UI_Maybe
             this.gamemodeListBoxUpdate.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Gamemode_Name"});
-            this.gamemodeListBoxUpdate.Location = new System.Drawing.Point(827, 220);
+            this.gamemodeListBoxUpdate.Location = new System.Drawing.Point(827, 176);
             this.gamemodeListBoxUpdate.Name = "gamemodeListBoxUpdate";
             this.gamemodeListBoxUpdate.Size = new System.Drawing.Size(120, 34);
             this.gamemodeListBoxUpdate.TabIndex = 39;
@@ -486,7 +493,7 @@ namespace SQL_UI_Maybe
             "Gamemode_ID",
             "Game_ID",
             "Gametype_ExpectedTime"});
-            this.gameTypeListUpdate.Location = new System.Drawing.Point(827, 220);
+            this.gameTypeListUpdate.Location = new System.Drawing.Point(827, 176);
             this.gameTypeListUpdate.Name = "gameTypeListUpdate";
             this.gameTypeListUpdate.Size = new System.Drawing.Size(120, 34);
             this.gameTypeListUpdate.TabIndex = 40;
@@ -498,7 +505,7 @@ namespace SQL_UI_Maybe
             this.statTypeListUpdate.Items.AddRange(new object[] {
             "StatType_ID",
             "StatType_Name"});
-            this.statTypeListUpdate.Location = new System.Drawing.Point(827, 220);
+            this.statTypeListUpdate.Location = new System.Drawing.Point(827, 176);
             this.statTypeListUpdate.Name = "statTypeListUpdate";
             this.statTypeListUpdate.Size = new System.Drawing.Size(120, 34);
             this.statTypeListUpdate.TabIndex = 41;
@@ -513,7 +520,7 @@ namespace SQL_UI_Maybe
             "Gametype_Game_ID",
             "StatType_ID",
             "Stat_Value"});
-            this.statListBoxUpdate.Location = new System.Drawing.Point(827, 220);
+            this.statListBoxUpdate.Location = new System.Drawing.Point(827, 176);
             this.statListBoxUpdate.Name = "statListBoxUpdate";
             this.statListBoxUpdate.Size = new System.Drawing.Size(120, 34);
             this.statListBoxUpdate.TabIndex = 42;
@@ -525,7 +532,7 @@ namespace SQL_UI_Maybe
             this.gameStatTypeListUpdate.Items.AddRange(new object[] {
             "GameStatType_ID",
             "GameStatType_Name"});
-            this.gameStatTypeListUpdate.Location = new System.Drawing.Point(827, 220);
+            this.gameStatTypeListUpdate.Location = new System.Drawing.Point(827, 176);
             this.gameStatTypeListUpdate.Name = "gameStatTypeListUpdate";
             this.gameStatTypeListUpdate.Size = new System.Drawing.Size(120, 34);
             this.gameStatTypeListUpdate.TabIndex = 43;
@@ -539,17 +546,27 @@ namespace SQL_UI_Maybe
             "Game_ID",
             "GameStatType_ID",
             "GameStat_Value"});
-            this.gameStatListUpdate.Location = new System.Drawing.Point(827, 220);
+            this.gameStatListUpdate.Location = new System.Drawing.Point(827, 176);
             this.gameStatListUpdate.Name = "gameStatListUpdate";
             this.gameStatListUpdate.Size = new System.Drawing.Size(120, 34);
             this.gameStatListUpdate.TabIndex = 44;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 322);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1068, 150);
+            this.dataGridView1.TabIndex = 45;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1095, 467);
+            this.ClientSize = new System.Drawing.Size(1095, 476);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gameStatListUpdate);
             this.Controls.Add(this.gameStatTypeListUpdate);
             this.Controls.Add(this.statListBoxUpdate);
@@ -594,6 +611,7 @@ namespace SQL_UI_Maybe
             this.Name = "Form3";
             this.Text = "VideoGameDB - Admin View";
             this.Load += new System.EventHandler(this.Form3_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +660,6 @@ namespace SQL_UI_Maybe
         private System.Windows.Forms.ListBox statListBoxUpdate;
         private System.Windows.Forms.ListBox gameStatTypeListUpdate;
         private System.Windows.Forms.ListBox gameStatListUpdate;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

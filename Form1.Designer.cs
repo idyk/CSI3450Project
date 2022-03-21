@@ -68,7 +68,6 @@ namespace SQL_UI_Maybe
             this.Username.Size = new System.Drawing.Size(123, 31);
             this.Username.TabIndex = 4;
             this.Username.Text = "Username";
-            this.Username.Click += new System.EventHandler(this.Username_Click);
             // 
             // Password
             // 
@@ -79,7 +78,6 @@ namespace SQL_UI_Maybe
             this.Password.Size = new System.Drawing.Size(112, 31);
             this.Password.TabIndex = 5;
             this.Password.Text = "Password";
-            this.Password.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -119,7 +117,6 @@ namespace SQL_UI_Maybe
             this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 9;
             this.label2.Text = "No account? ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Stats
             // 
@@ -129,7 +126,6 @@ namespace SQL_UI_Maybe
             this.Stats.TabIndex = 10;
             this.Stats.Text = "Stats";
             this.Stats.UseVisualStyleBackColor = true;
-            this.Stats.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Friends
             // 
@@ -166,6 +162,7 @@ namespace SQL_UI_Maybe
             this.Admin.TabIndex = 14;
             this.Admin.Text = "Admin";
             this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
             // MakeAccount
             // 
@@ -197,7 +194,6 @@ namespace SQL_UI_Maybe
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

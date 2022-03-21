@@ -44,7 +44,6 @@ namespace SQL_UI_Maybe
             this.label1.TabIndex = 0;
             this.label1.Text = "Since you are a guest, this is all you can see! Get an account to be able to do m" +
     "ore!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -54,7 +53,7 @@ namespace SQL_UI_Maybe
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(706, 262);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form2
             // 
@@ -65,7 +64,6 @@ namespace SQL_UI_Maybe
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -20,36 +20,6 @@ namespace SQL_UI_Maybe
            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Username_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guest_Click(object sender, EventArgs e)
         {
             Form Form2 = new Form2();
@@ -58,9 +28,11 @@ namespace SQL_UI_Maybe
             
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Admin_Click(object sender, EventArgs e)
         {
-
+            Form Form3 = new Form3();
+            this.Hide();
+            Form3.Show();
         }
     }
 }

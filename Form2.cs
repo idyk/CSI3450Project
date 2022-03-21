@@ -30,21 +30,12 @@ namespace SQL_UI_Maybe
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             da.Fill(ds);
+       
             dt = ds.Tables[0];
 
             dataGridView1.DataSource = dt;
 
             connection.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -71,11 +62,6 @@ namespace SQL_UI_Maybe
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

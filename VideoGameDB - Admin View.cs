@@ -1028,6 +1028,24 @@ namespace SQL_UI_Maybe
                 teamListBoxUpdate.Visible = true;
             }
 
+            MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
+
+            connection.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter();
+
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM " + listBox2.Text + ";", connection);
+
+            da.SelectCommand = selectCommand;
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            da.Fill(ds);
+            dt = ds.Tables[0];
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            connection.Close();
 
         }
 
@@ -1045,32 +1063,61 @@ namespace SQL_UI_Maybe
                     //For entities with FOUR attributes
                     if (listBox2.Text == "GameStat" || listBox2.Text == "Player")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES(" + textBox1.Text + "," + textBox3.Text + "," + textBox4.Text + "," + textBox5.Text + ");", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES(" + textBox1.Text + "," + textBox3.Text + "," + textBox4.Text + "," + textBox5.Text + ");", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch(Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
+
                         connection.Close();
                     }
 
                     //For entities with TWO attributes
                     if(listBox2.Text == "GameStatType" || listBox2.Text == "Game" || listBox2.Text == "Gamemode" || listBox2.Text == "StatType")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "');", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "');", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
 
                     //For entities with FIVE attributes
                     if (listBox2.Text == "Stat")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text +  "','" + textBox6.Text + "');", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "');", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
 
                     //For entities with THREE attributes
                     if (listBox2.Text == "Gametype" || listBox2.Text == "Team")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "');", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " VALUES('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "');", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
 
@@ -1081,57 +1128,120 @@ namespace SQL_UI_Maybe
                     System.Diagnostics.Debug.WriteLine(listBox1.Text);
                     if (listBox2.Text == "GameStat")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameStatList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameStatList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
 
                     if (listBox2.Text == "GameStatType")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameStatTypeList.Text + " " + conditionsList.Text + "'" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameStatTypeList.Text + " " + conditionsList.Text + "'" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Stat")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + statList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + statList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "StatType")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + statTypeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + statTypeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Gametype")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameTypeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameTypeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Gamemode")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gamemodeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gamemodeList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Player")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + playerList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + playerList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Team")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + teamList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + teamList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Game")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " WHERE " + gameList.Text + " " + conditionsList.Text + " '" + deleteFromTextBox2.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                 }
@@ -1143,56 +1253,119 @@ namespace SQL_UI_Maybe
 
                     if (listBox2.Text == "Player")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + playerList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + playerListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + playerList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + playerListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "GameStat")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameStatList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameStatListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameStatList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameStatListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "GameStatType")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameStatTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameStatTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameStatTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameStatTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "StatType")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + statTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + statTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + statTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + statTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Gametype")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameTypeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameTypeListUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Gamemode")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gamemodeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gamemodeListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gamemodeList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gamemodeListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Game")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + gameList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + gameListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Team")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + teamList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + teamListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + teamList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + teamListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                     if (listBox2.Text == "Stat")
                     {
-                        MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + statList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + statListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
-                        command.ExecuteNonQuery();
+                        try
+                        {
+                            MySqlCommand command = new MySqlCommand(listBox1.Text + " " + listBox2.Text + " SET " + statList.Text + " = '" + updateChangeTextBox.Text + "' WHERE " + statListBoxUpdate.Text + " = '" + updateToTextBox.Text + "';", connection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception exc)
+                        {
+                            System.Diagnostics.Debug.WriteLine(exc);
+                        }
                         connection.Close();
                     }
                 }
@@ -1203,6 +1376,24 @@ namespace SQL_UI_Maybe
                 System.Diagnostics.Debug.WriteLine(exec.Message);
                 errorLabel.Text = exec.Message;
             }
+            connection.Close();
+
+            connection.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter();
+
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM " + listBox2.Text + ";", connection);
+
+            da.SelectCommand = selectCommand;
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            da.Fill(ds);
+            dt = ds.Tables[0];
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            connection.Close();
         }
 
 
