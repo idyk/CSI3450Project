@@ -71,14 +71,17 @@ namespace SQL_UI_Maybe
             this.gameStatTypeListUpdate = new System.Windows.Forms.ListBox();
             this.gameStatListUpdate = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.uploadListBox = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(738, 12);
+            this.button1.Location = new System.Drawing.Point(681, 59);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
+            this.button1.Size = new System.Drawing.Size(69, 24);
             this.button1.TabIndex = 0;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,7 +90,7 @@ namespace SQL_UI_Maybe
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(825, 18);
+            this.label1.Location = new System.Drawing.Point(504, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 1;
@@ -96,7 +99,7 @@ namespace SQL_UI_Maybe
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(900, 19);
+            this.label2.Location = new System.Drawing.Point(579, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 15);
             this.label2.TabIndex = 2;
@@ -560,12 +563,55 @@ namespace SQL_UI_Maybe
             this.dataGridView1.Size = new System.Drawing.Size(1068, 150);
             this.dataGridView1.TabIndex = 45;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(504, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 15);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Pick table to upload to:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // uploadListBox
+            // 
+            this.uploadListBox.FormattingEnabled = true;
+            this.uploadListBox.ItemHeight = 15;
+            this.uploadListBox.Items.AddRange(new object[] {
+            "GameStat",
+            "GameStatType",
+            "Stat",
+            "StatType",
+            "Gametype",
+            "Gamemode",
+            "Game",
+            "Player",
+            "Team"});
+            this.uploadListBox.Location = new System.Drawing.Point(640, 9);
+            this.uploadListBox.Name = "uploadListBox";
+            this.uploadListBox.Size = new System.Drawing.Size(148, 34);
+            this.uploadListBox.TabIndex = 47;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(504, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 15);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Pick file to upload to table:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1095, 476);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.uploadListBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gameStatListUpdate);
             this.Controls.Add(this.gameStatTypeListUpdate);
@@ -661,5 +707,8 @@ namespace SQL_UI_Maybe
         private System.Windows.Forms.ListBox gameStatTypeListUpdate;
         private System.Windows.Forms.ListBox gameStatListUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox uploadListBox;
+        private System.Windows.Forms.Label label4;
     }
 }

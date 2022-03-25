@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.FileIO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,40 +47,144 @@ namespace SQL_UI_Maybe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;AllowLoadLocalInfile=True");
+            MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.CheckFileExists = true;
             openFileDialog.Filter = "csv files (*.csv)|*.csv";
-            var filePath = string.Empty;
+            var filePath = "@" + openFileDialog.FileName;
             var fileContent = string.Empty;
- 
+
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 filePath = openFileDialog.FileName;
-                
+
                 label2.Text = filePath;
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 var fileStream = openFileDialog.OpenFile();
 
-                using (StreamReader reader = new StreamReader(fileStream))
+
+                //Two attribute files
+                if (uploadListBox.Text != null && uploadListBox.Text == "GameStatType" || uploadListBox.Text == "Game" || uploadListBox.Text == "Gamemode" || uploadListBox.Text == "StatType")
                 {
-                    fileContent = reader.ReadToEnd();
-                    
+                    using (TextFieldParser csvParser = new TextFieldParser(filePath))
+                    {
+                        csvParser.SetDelimiters(new string[] { "," });
+                        csvParser.HasFieldsEnclosedInQuotes = true;
+                        csvParser.ReadLine();
+
+                        while (!csvParser.EndOfData)
+                        {
+                            string[] csvText = csvParser.ReadFields();
+                            string firstValue = csvText[0];
+                            string secondValue = csvText[1];
+                            MySqlCommand command = new MySqlCommand("INSERT INTO " + uploadListBox.Text + " VALUES('" + firstValue + "', '" + secondValue + "');", connection);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
                 }
 
+                //Four attribute files
+                if (uploadListBox.Text != null && uploadListBox.Text == "GameStat" || uploadListBox.Text == "Player")
+                {
+                    using (TextFieldParser csvParser = new TextFieldParser(filePath))
+                    {
+                        csvParser.SetDelimiters(new string[] { "," });
+                        csvParser.HasFieldsEnclosedInQuotes = true;
+                        csvParser.ReadLine();
 
-   
-                //Weird permissions thing makes it not work???
-                MySqlCommand command = new MySqlCommand("LOAD DATA INFILE '" + filePath + "' INTO TABLE GameStatType FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;", connection);
-                
-                connection.Open();
-                command.ExecuteNonQuery();                      
-                connection.Close();
+                        while (!csvParser.EndOfData)
+                        {
+                            string[] csvText = csvParser.ReadFields();
+                            string firstValue = csvText[0];
+                            string secondValue = csvText[1];
+                            string thirdValue = csvText[2];
+                            string fourthValue = csvText[3];
+                            MySqlCommand command = new MySqlCommand("INSERT INTO " + uploadListBox.Text + " VALUES('" + firstValue + "', '" + secondValue + "', '" + thirdValue + "', '" + fourthValue + "');", connection);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
+                }
 
-                System.Diagnostics.Debug.WriteLine("The contents of " + filePath + " are:\n" + fileContent);
+                //Five attribute files
+                if (uploadListBox.Text != null && uploadListBox.Text == "Stat")
+                {
+                    using (TextFieldParser csvParser = new TextFieldParser(filePath))
+                    {
+                        csvParser.SetDelimiters(new string[] { "," });
+                        csvParser.HasFieldsEnclosedInQuotes = true;
+                        csvParser.ReadLine();
+
+                        while (!csvParser.EndOfData)
+                        {
+                            string[] csvText = csvParser.ReadFields();
+                            string firstValue = csvText[0];
+                            string secondValue = csvText[1];
+                            string thirdValue = csvText[2];
+                            string fourthValue = csvText[3];
+                            string fifthValue = csvText[4];
+                            MySqlCommand command = new MySqlCommand("INSERT INTO " + uploadListBox.Text + " VALUES('" + firstValue + "', '" + secondValue + "', '" + thirdValue + "', '" + fourthValue + "', '" + fifthValue + "');", connection);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
+                }
+
+                //Three attribute files
+                if (uploadListBox.Text != null && uploadListBox.Text == "Gametype" || uploadListBox.Text == "Team")
+                {
+                    using (TextFieldParser csvParser = new TextFieldParser(filePath))
+                    {
+                        csvParser.SetDelimiters(new string[] { "," });
+                        csvParser.HasFieldsEnclosedInQuotes = true;
+                        csvParser.ReadLine();
+
+                        while (!csvParser.EndOfData)
+                        {
+                            string[] csvText = csvParser.ReadFields();
+                            string firstValue = csvText[0];
+                            string secondValue = csvText[1];
+                            string thirdValue = csvText[2];
+                            MySqlCommand command = new MySqlCommand("INSERT INTO " + uploadListBox.Text + " VALUES('" + firstValue + "', '" + secondValue + "', '" + thirdValue +  "');", connection);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
+                }
             }
-            
+            connection.Close();
+
+            connection.Open();
+
+            MySqlDataAdapter ada = new MySqlDataAdapter();
+
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM " + uploadListBox.Text + ";", connection);
+
+            ada.SelectCommand = selectCommand;
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            try
+            {
+                ada.Fill(ds);
+                dt = ds.Tables[0];
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+
+            connection.Close();
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -1051,6 +1156,7 @@ namespace SQL_UI_Maybe
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            uploadListBox.ClearSelected();
             MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
            
             connection.Open();
@@ -1388,10 +1494,18 @@ namespace SQL_UI_Maybe
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
-            da.Fill(ds);
-            dt = ds.Tables[0];
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            try
+            {
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
 
             connection.Close();
         }
@@ -1430,6 +1544,11 @@ namespace SQL_UI_Maybe
         }
 
         private void statList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
