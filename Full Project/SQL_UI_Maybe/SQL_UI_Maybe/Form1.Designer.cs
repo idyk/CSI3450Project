@@ -163,6 +163,7 @@ namespace SQL_UI_Maybe
             this.Admin.TabIndex = 14;
             this.Admin.Text = "Admin";
             this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
             // MakeAccount
             // 

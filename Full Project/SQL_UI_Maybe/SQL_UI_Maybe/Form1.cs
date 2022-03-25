@@ -34,5 +34,12 @@ namespace SQL_UI_Maybe
             this.Hide();
             StatsPage.Show();
         }
+
+        private void Admin_Click(object sender, EventArgs e)
+        {
+            Form Form3 = new Form3();
+            this.Hide();
+            Form3.Show();
+        }
     }
 }

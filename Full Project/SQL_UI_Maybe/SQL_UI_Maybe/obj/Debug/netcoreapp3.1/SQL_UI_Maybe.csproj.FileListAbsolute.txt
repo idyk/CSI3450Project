@@ -81,3 +81,4 @@ D:\GitHub\CSI3450Project\Full Project\SQL_UI_Maybe\SQL_UI_Maybe\obj\Debug\netcor
 D:\GitHub\CSI3450Project\Full Project\SQL_UI_Maybe\SQL_UI_Maybe\obj\Debug\netcoreapp3.1\SQL_UI_Maybe.dll
 D:\GitHub\CSI3450Project\Full Project\SQL_UI_Maybe\SQL_UI_Maybe\obj\Debug\netcoreapp3.1\SQL_UI_Maybe.pdb
 D:\GitHub\CSI3450Project\Full Project\SQL_UI_Maybe\SQL_UI_Maybe\obj\Debug\netcoreapp3.1\SQL_UI_Maybe.genruntimeconfig.cache
+D:\GitHub\CSI3450Project\Full Project\SQL_UI_Maybe\SQL_UI_Maybe\obj\Debug\netcoreapp3.1\SQL_UI_Maybe.Form3.resources
