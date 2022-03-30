@@ -13,11 +13,13 @@ namespace SQL_UI_Maybe
     {
         MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
         private List<string> List_Gamemode = new List<string>();
+        private Form form_rtn;
 
-        public StatsPage()
+        public StatsPage(Form form_rtn)
         {
             InitializeComponent();
-            InitializeChoices();
+            //InitializeChoices();
+            this.form_rtn = form_rtn;
         }
 
         public void InitializeChoices()
@@ -120,8 +122,7 @@ namespace SQL_UI_Maybe
         private void btn_Home_Click(object sender, EventArgs e)
         {
             //returns to the home screen
-            /*
-            <Replace with Home form name>.Show();*/
+            form_rtn.Show();
             this.Close();
         }
 

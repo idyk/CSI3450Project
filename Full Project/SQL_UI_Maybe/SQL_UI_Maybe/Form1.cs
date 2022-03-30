@@ -28,18 +28,23 @@ namespace SQL_UI_Maybe
             
         }
 
-        private void Stats_Click(object sender, EventArgs e)
-        {
-            Form StatsPage = new StatsPage();
-            this.Hide();
-            StatsPage.Show();
-        }
-
         private void Admin_Click(object sender, EventArgs e)
         {
             Form Form3 = new Form3();
             this.Hide();
             Form3.Show();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            Form Home = new Home(this);
+            Home.Show();
+            this.Hide();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
