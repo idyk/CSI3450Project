@@ -18,8 +18,8 @@ namespace SQL_UI_Maybe
         public StatsPage(Form form_rtn)
         {
             InitializeComponent();
-            //InitializeChoices();
             this.form_rtn = form_rtn;
+            InitializeChoices();
         }
 
         public void InitializeChoices()
@@ -113,8 +113,9 @@ namespace SQL_UI_Maybe
             {
                 MessageBox.Show(ex.ToString());
                 connection.Close();
-                
+
                 //go back to previous page
+                form_rtn.Show();
                 this.Close();
             }
         }
