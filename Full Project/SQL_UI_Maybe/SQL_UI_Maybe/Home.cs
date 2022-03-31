@@ -247,7 +247,32 @@ namespace SQL_UI_Maybe
 
         private void cbx_Gamemode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //create game and gamemode strings
+            string game, gamemode;
+            
+            //attempt to retrieve the selected item from the combo boxes
+            try
+            {
+                game = cbx_Game.SelectedItem.ToString();
+                gamemode = cbx_Gamemode.SelectedItem.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("At least one combo box did not have a valid choice selected.\n" +
+                                "Please select a valid option for all combo boxes.");
+                return;
+            }
+            
+            //refresh the gamemode stats
+            try
+            {
+                refreshGamemodeStats(game, gamemode);
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
