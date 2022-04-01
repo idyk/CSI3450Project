@@ -56,7 +56,7 @@
             // 
             // btn_SignOut
             // 
-            this.btn_SignOut.Location = new System.Drawing.Point(444, 7);
+            this.btn_SignOut.Location = new System.Drawing.Point(578, 7);
             this.btn_SignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SignOut.Name = "btn_SignOut";
             this.btn_SignOut.Size = new System.Drawing.Size(68, 35);
@@ -68,7 +68,7 @@
             // lbl_Account
             // 
             this.lbl_Account.AutoSize = true;
-            this.lbl_Account.Location = new System.Drawing.Point(332, 7);
+            this.lbl_Account.Location = new System.Drawing.Point(466, 7);
             this.lbl_Account.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account.Name = "lbl_Account";
             this.lbl_Account.Size = new System.Drawing.Size(103, 30);
@@ -101,7 +101,7 @@
             // 
             // btn_StatsPage
             // 
-            this.btn_StatsPage.Location = new System.Drawing.Point(274, 84);
+            this.btn_StatsPage.Location = new System.Drawing.Point(359, 84);
             this.btn_StatsPage.Margin = new System.Windows.Forms.Padding(2);
             this.btn_StatsPage.Name = "btn_StatsPage";
             this.btn_StatsPage.Size = new System.Drawing.Size(107, 28);
@@ -125,7 +125,7 @@
             // btn_Team
             // 
             this.btn_Team.Enabled = false;
-            this.btn_Team.Location = new System.Drawing.Point(142, 84);
+            this.btn_Team.Location = new System.Drawing.Point(180, 84);
             this.btn_Team.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Team.Name = "btn_Team";
             this.btn_Team.Size = new System.Drawing.Size(107, 28);
@@ -137,7 +137,7 @@
             // btn_AcntOptn
             // 
             this.btn_AcntOptn.Enabled = false;
-            this.btn_AcntOptn.Location = new System.Drawing.Point(405, 84);
+            this.btn_AcntOptn.Location = new System.Drawing.Point(539, 84);
             this.btn_AcntOptn.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AcntOptn.Name = "btn_AcntOptn";
             this.btn_AcntOptn.Size = new System.Drawing.Size(107, 28);
@@ -156,7 +156,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(502, 224);
+            this.groupBox1.Size = new System.Drawing.Size(636, 287);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Stats";
@@ -164,9 +164,9 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbx_Gamemode);
-            this.groupBox5.Location = new System.Drawing.Point(253, 18);
+            this.groupBox5.Location = new System.Drawing.Point(313, 18);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(117, 54);
+            this.groupBox5.Size = new System.Drawing.Size(143, 54);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Gamemode";
@@ -178,7 +178,7 @@
             this.cbx_Gamemode.Location = new System.Drawing.Point(11, 21);
             this.cbx_Gamemode.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_Gamemode.Name = "cbx_Gamemode";
-            this.cbx_Gamemode.Size = new System.Drawing.Size(97, 23);
+            this.cbx_Gamemode.Size = new System.Drawing.Size(127, 23);
             this.cbx_Gamemode.TabIndex = 1;
             this.cbx_Gamemode.SelectedIndexChanged += new System.EventHandler(this.cbx_Gamemode_SelectedIndexChanged);
             // 
@@ -187,7 +187,7 @@
             this.groupBox4.Controls.Add(this.cbx_Game);
             this.groupBox4.Location = new System.Drawing.Point(4, 18);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(117, 54);
+            this.groupBox4.Size = new System.Drawing.Size(143, 54);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Game";
@@ -199,18 +199,18 @@
             this.cbx_Game.Location = new System.Drawing.Point(7, 21);
             this.cbx_Game.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_Game.Name = "cbx_Game";
-            this.cbx_Game.Size = new System.Drawing.Size(96, 23);
+            this.cbx_Game.Size = new System.Drawing.Size(131, 23);
             this.cbx_Game.TabIndex = 0;
             this.cbx_Game.SelectedIndexChanged += new System.EventHandler(this.cbx_Game_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Location = new System.Drawing.Point(253, 77);
+            this.groupBox3.Location = new System.Drawing.Point(313, 77);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(245, 143);
+            this.groupBox3.Size = new System.Drawing.Size(319, 206);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gamemode Stats for Selected Game";
@@ -223,7 +223,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 82;
             this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(238, 121);
+            this.dataGridView2.Size = new System.Drawing.Size(311, 184);
             this.dataGridView2.TabIndex = 1;
             // 
             // groupBox2
@@ -233,7 +233,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(245, 143);
+            this.groupBox2.Size = new System.Drawing.Size(305, 206);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Stats";
@@ -246,14 +246,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(238, 121);
+            this.dataGridView1.Size = new System.Drawing.Size(295, 184);
             this.dataGridView1.TabIndex = 0;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 357);
+            this.ClientSize = new System.Drawing.Size(657, 420);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_AcntOptn);
             this.Controls.Add(this.btn_Team);

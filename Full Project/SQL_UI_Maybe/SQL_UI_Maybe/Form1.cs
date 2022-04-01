@@ -38,7 +38,7 @@ namespace SQL_UI_Maybe
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            Form Home = new Home(this, 1, "shmacfadyen");
+            Form Home = new Home(this, 1, "ShaneSM");
             Home.Show();
             this.Hide();
         }

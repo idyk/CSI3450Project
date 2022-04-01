@@ -15,8 +15,9 @@ namespace SQL_UI_Maybe
     {
         MySqlConnection connection = new MySqlConnection(Connect.conn_string);
         private List<string> List_Gamemode = new List<string>();
+        private List<string> List_Game = new List<string>();
         private Form form_rtn;
-        private int player_num, accnt_num;
+        private int player_num = 0, accnt_num = 0;
         
         public Home(Form form_rtn, int accnt_num, string accnt_name)
         {
@@ -29,7 +30,7 @@ namespace SQL_UI_Maybe
         private void InitializeOptions(string accnt_name)
         {
             //display account name
-            lbl_Account.Text = "Signed in as: " + accnt_name;
+            lbl_Account.Text = "Signed in as:\n" + accnt_name;
             
             //MySql objects
             MySqlCommand cmd;
@@ -50,11 +51,11 @@ namespace SQL_UI_Maybe
 
                 //Initialize Game Choices
                 cmd = new MySqlCommand(select_game, connection);
-                cbx_Game.Items.Add("All");
+                List_Game.Add("All");
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    cbx_Game.Items.Add(rdr[0].ToString());
+                    List_Game.Add(rdr[0].ToString());
                 }
                 rdr.Close();
 
@@ -83,6 +84,8 @@ namespace SQL_UI_Maybe
 
                 connection.Close();
 
+                cbx_Game.DataSource = List_Game;
+
                 changePageState(flg, username);
             }
             catch (Exception ex)
@@ -95,16 +98,11 @@ namespace SQL_UI_Maybe
         private void changePageState(bool isPlayerID, string username = "")
         {
             //return the combo box selections to default
-            cbx_Gamemode.DataSource = List_Gamemode;
             cbx_Game.SelectedIndex = 0;
 
             //set the username label and refresh the stats if there is a player ID
             if (isPlayerID)
-            {
                 lbl_Username.Text = "Player Username: " + username;
-                refreshGameStats("All");
-                refreshGamemodeStats("All", "All");
-            }
             else
                 lbl_Username.Text = "No Player Username Found.";
 
@@ -128,16 +126,16 @@ namespace SQL_UI_Maybe
             //select the query to be used
             string query;
             if (game.Equals("All"))
-                query = "SELECT GameStatType_Name, SUM(GameStat_Value) " +
+                query = "SELECT GameStatType_Name AS \"Stat\", SUM(GameStat_Value) AS \"Value\" " +
                         "FROM GameStat JOIN GameStatType ON GameStat.GameStatType_ID = GameStatType.GameStatType_ID " +
                                       "JOIN Game ON GameStat.Game_ID = Game.Game_ID " +
-                        "GROUP BY Player_ID, GameStatType_Name " +
-                        "WHERE Player_ID = " + player_num + ";";
+                        "WHERE Player_ID = " + player_num + " " +
+                        "GROUP BY Player_ID, GameStatType_Name;";
             else
-                query = "SELECT GameStatType_Name, GameStat_Value " +
+                query = "SELECT GameStatType_Name AS \"Stat\", GameStat_Value AS \"Value\" " +
                         "FROM GameStat JOIN GameStatType ON GameStat.GameStatType_ID = GameStatType.GameStatType_ID " +
                                       "JOIN Game ON GameStat.Game_ID = Game.Game_ID " +
-                        "WHERE Game_Title = " + game + " and Player_ID = " + player_num + ";";
+                        "WHERE Game_Title = \"" + game + "\" and Player_ID = " + player_num + ";";
 
             //create mySQL interfacing objects
             MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -166,14 +164,19 @@ namespace SQL_UI_Maybe
             bool gamemode_sum = gamemode.Equals("All");
             
             //construct the query
-            string query = "SELECT StatType_Name";
+            string query = "SELECT StatType_Name AS \"Stat\"";
             if (game_sum || gamemode_sum)
-                query += ", SUM(Stat_Value)";
+                query += ", SUM(Stat_Value) AS \"Value\"";
             else
-                query += ", Stat_Value";
+                query += ", Stat_Value AS \"Value\"";
             query += " FROM Stat JOIN StatType ON Stat.StatType_ID = StatType.StatType_ID " +
                                 "JOIN Gametype_Info ON Stat.Gametype_Gamemode_ID = Gametype_Info.Gamemode_ID " +
                                                   "and Stat.Gametype_Game_ID = Gametype_Info.Game_ID";
+            query += " WHERE Player_ID = " + player_num;
+            if (!game_sum)
+                query += " and Game_Title = \"" + game + "\"";
+            if (!gamemode_sum)
+                query += " and Gamemode_Name = \"" + gamemode + "\"";
             if (game_sum || gamemode_sum)
             {
                 query += " GROUP BY Player_ID, StatType_Name";
@@ -182,11 +185,6 @@ namespace SQL_UI_Maybe
                 if (!gamemode_sum)
                     query += ", Gamemode_Name";
             }
-            query += " WHERE Player_ID = " + player_num;
-            if (!game_sum)
-                query += " and Game_Title = " + game;
-            if (!gamemode_sum)
-                query += " and Gamemode_Name = " + gamemode;
             query += ";";
 
             //create mySQL interfacing objects
@@ -230,7 +228,7 @@ namespace SQL_UI_Maybe
 
         private void btn_StatsPage_Click(object sender, EventArgs e)
         {
-            Form StatsPage = new StatsPage(this);
+            Form StatsPage = new StatsPage(this, List_Game, List_Gamemode);
             this.Hide();
             StatsPage.Show();
         }
@@ -263,6 +261,7 @@ namespace SQL_UI_Maybe
             if (game_idx == 0)
             {
                 cbx_Gamemode.DataSource = List_Gamemode;
+                cbx_Gamemode.SelectedIndex = 0;
             }
             else
             {
@@ -290,6 +289,7 @@ namespace SQL_UI_Maybe
                     connection.Close();
 
                     cbx_Gamemode.DataSource = List_gmfg;
+                    cbx_Gamemode.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -298,16 +298,14 @@ namespace SQL_UI_Maybe
 
                     //return to default choices
                     cbx_Game.SelectedIndex = 0;
-                    game = "All";
-                    cbx_Gamemode.DataSource = List_Gamemode;
+                    return;
                 }
             }
 
             try
             {
-                //refresh both the game and gamemode stats
+                //refresh the game stats
                 refreshGameStats(game);
-                refreshGamemodeStats(game, "All");
             }
             catch (Exception ex)
             {

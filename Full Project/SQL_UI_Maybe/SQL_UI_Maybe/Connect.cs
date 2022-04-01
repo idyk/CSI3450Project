@@ -9,7 +9,9 @@ namespace SQL_UI_Maybe
 {
     public static class Connect
     {
-        public const string conn_string = "SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;";
+        //public const string conn_string = "SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;";
+        public const string conn_string = "SERVER=localhost;DATABASE=VideoGameDB;UID=appProg;PWD=root;";
+
         /*private static MySqlConnection connection;
         private static MySqlCommand command = null;
         private static DataTable table;

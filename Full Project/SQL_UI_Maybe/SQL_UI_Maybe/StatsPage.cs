@@ -15,10 +15,12 @@ namespace SQL_UI_Maybe
         private List<string> List_Gamemode = new List<string>();
         private Form form_rtn;
 
-        public StatsPage(Form form_rtn)
+        public StatsPage(Form form_rtn, List<string> List_Game, List<string> List_Gamemode)
         {
             InitializeComponent();
             this.form_rtn = form_rtn;
+            this.List_Gamemode = List_Gamemode;
+            cbx_Game.Items.AddRange(List_Game.ToArray());
             InitializeChoices();
         }
 
@@ -37,20 +39,20 @@ namespace SQL_UI_Maybe
                 //MySql objects
                 MySqlCommand cmd;
                 MySqlDataReader rdr;
-                
+                /*
                 //Create Game Choices Command
                 string select_game = "SELECT Game_Title FROM Game;";
 
                 //Create Gamemode Choices Command
                 string select_gamemode = "SELECT Gamemode_Name FROM Gamemode;";
-
+                */
                 //Create Stat Type Choices Command
                 string select_stat = "SELECT StatType_Name FROM StatType;";
 
                 string select_gamestat = "SELECT GameStatType_Name FROM GameStatType;";
 
                 connection.Open();
-
+                /*
                 //Initialize Game Choices
                 cmd = new MySqlCommand(select_game, connection);
                 cbx_Game.Items.Add("All");
@@ -70,7 +72,7 @@ namespace SQL_UI_Maybe
                     List_Gamemode.Add(rdr[0].ToString());
                 }
                 rdr.Close();
-
+                */
                 //Initialize Stat Type Choices
                 cmd = new MySqlCommand(select_stat, connection);
                 rdr = cmd.ExecuteReader();
@@ -91,8 +93,7 @@ namespace SQL_UI_Maybe
                 connection.Close();
 
 
-                //Set Data Sources and Items for Combo Boxes
-                cbx_Gamemode.DataSource = List_Gamemode;
+                //Set Items for Combo Boxes
                 Stat1_Direct.Items.AddRange(List_Stat.ToArray());
 
                 //Set Default Indecies
@@ -1002,6 +1003,7 @@ namespace SQL_UI_Maybe
             if (cbx_Game.SelectedIndex == 0)
             {
                 cbx_Gamemode.DataSource = List_Gamemode;
+                cbx_Gamemode.SelectedIndex = 0;
             }
             else
             {
@@ -1029,6 +1031,7 @@ namespace SQL_UI_Maybe
                     connection.Close();
 
                     cbx_Gamemode.DataSource = List_gmfg;
+                    cbx_Gamemode.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -1037,7 +1040,6 @@ namespace SQL_UI_Maybe
 
                     //return to default choices
                     cbx_Game.SelectedIndex = 0;
-                    cbx_Gamemode.DataSource = List_Gamemode;
                 }
             }
         }
