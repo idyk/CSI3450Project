@@ -129,7 +129,6 @@ namespace SQL_UI_Maybe
             //enable the other buttons and combo boxes if there is a player ID
             btn_Friends.Enabled = isPlayerID;
             btn_Team.Enabled = isPlayerID;
-            btn_AcntOptn.Enabled = isPlayerID;
             cbx_Game.Enabled = isPlayerID;
             cbx_Gamemode.Enabled = isPlayerID;
         }
@@ -253,7 +252,9 @@ namespace SQL_UI_Maybe
 
         private void btn_AcntOptn_Click(object sender, EventArgs e)
         {
-
+            Form AccntOptions = new AccntOptions(this, accnt_num, noPlayerID);
+            this.Hide();
+            AccntOptions.Show();
         }
 
         private void cbx_Game_SelectedIndexChanged(object sender, EventArgs e)

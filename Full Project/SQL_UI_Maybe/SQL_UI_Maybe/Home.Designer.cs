@@ -136,7 +136,6 @@
             // 
             // btn_AcntOptn
             // 
-            this.btn_AcntOptn.Enabled = false;
             this.btn_AcntOptn.Location = new System.Drawing.Point(539, 84);
             this.btn_AcntOptn.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AcntOptn.Name = "btn_AcntOptn";
