@@ -13,11 +13,13 @@ namespace SQL_UI_Maybe
 {
     public partial class Home : Form
     {
-        MySqlConnection connection = new MySqlConnection(Connect.conn_string);
+        public MySqlConnection connection = new MySqlConnection(Connect.conn_string);
+        public int player_num = 0;
+
         private List<string> List_Gamemode = new List<string>();
         private List<string> List_Game = new List<string>();
         private Form form_rtn;
-        private int player_num = 0, accnt_num = 0;
+        private int accnt_num = 0;
         private bool noPlayerID = true;
         
         public Home(Form form_rtn, int accnt_num, string accnt_name)
@@ -31,7 +33,7 @@ namespace SQL_UI_Maybe
         private void InitializeOptions(string accnt_name)
         {
             //display account name
-            lbl_Account.Text = "Signed in as:\n" + accnt_name;
+            setAccountNameLabel(accnt_name);
             
             //MySql objects
             MySqlCommand cmd;
@@ -96,7 +98,17 @@ namespace SQL_UI_Maybe
             }
         }
 
-        private void changePageState(bool isPlayerID, string username = "")
+        public void setAccountNameLabel(string accnt_name)
+        {
+            lbl_Account.Text = "Signed in as:\n" + accnt_name;
+        }
+
+        public void setUsernameLabel(string username)
+        {
+            lbl_Username.Text = "Player Username: " + username;
+        }
+
+        public void changePageState(bool isPlayerID, string username = "")
         {
             //set the no player ID boolean
             noPlayerID = !isPlayerID;
@@ -106,7 +118,7 @@ namespace SQL_UI_Maybe
 
             //set the username label and refresh the stats if there is a player ID
             if (isPlayerID)
-                lbl_Username.Text = "Player Username: " + username;
+                setUsernameLabel(username);
             else
                 lbl_Username.Text = "No Player Username Found.";
 
@@ -217,12 +229,14 @@ namespace SQL_UI_Maybe
 
         private void btn_Link_Click(object sender, EventArgs e)
         {
-
+            Form AccntLink = new AccntLink(this, accnt_num);
+            this.Hide();
+            AccntLink.Show();
         }
 
         private void btn_Friends_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btn_Team_Click(object sender, EventArgs e)

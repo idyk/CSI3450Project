@@ -39,40 +39,14 @@ namespace SQL_UI_Maybe
                 //MySql objects
                 MySqlCommand cmd;
                 MySqlDataReader rdr;
-                /*
-                //Create Game Choices Command
-                string select_game = "SELECT Game_Title FROM Game;";
-
-                //Create Gamemode Choices Command
-                string select_gamemode = "SELECT Gamemode_Name FROM Gamemode;";
-                */
+                
                 //Create Stat Type Choices Command
                 string select_stat = "SELECT StatType_Name FROM StatType;";
 
                 string select_gamestat = "SELECT GameStatType_Name FROM GameStatType;";
 
                 connection.Open();
-                /*
-                //Initialize Game Choices
-                cmd = new MySqlCommand(select_game, connection);
-                cbx_Game.Items.Add("All");
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    cbx_Game.Items.Add(rdr[0].ToString());
-                }
-                rdr.Close();
                 
-                //Initialize Gamemode Choices
-                cmd = new MySqlCommand(select_gamemode, connection);
-                List_Gamemode.Add("All");
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    List_Gamemode.Add(rdr[0].ToString());
-                }
-                rdr.Close();
-                */
                 //Initialize Stat Type Choices
                 cmd = new MySqlCommand(select_stat, connection);
                 rdr = cmd.ExecuteReader();
