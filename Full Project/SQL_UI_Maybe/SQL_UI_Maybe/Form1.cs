@@ -1,5 +1,6 @@
 ﻿//CSI3450 TEAM SORT AND DESTROY
 
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,7 @@ namespace SQL_UI_Maybe
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            Form Home = new Home(this);
+            Form Home = new Home(this, 1, "shmacfadyen");
             Home.Show();
             this.Hide();
         }

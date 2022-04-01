@@ -47,7 +47,7 @@ namespace SQL_UI_Maybe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
+            MySqlConnection connection = new MySqlConnection(Connect.conn_string);
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.CheckFileExists = true;
             openFileDialog.Filter = "csv files (*.csv)|*.csv";

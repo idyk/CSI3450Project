@@ -11,7 +11,7 @@ namespace SQL_UI_Maybe
 {
     public partial class Form2 : Form
     {
-        MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
+        MySqlConnection connection = new MySqlConnection(Connect.conn_string);
         public Form2()
         {
             InitializeComponent();

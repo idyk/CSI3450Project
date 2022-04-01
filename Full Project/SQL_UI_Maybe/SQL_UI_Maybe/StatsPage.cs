@@ -11,7 +11,7 @@ namespace SQL_UI_Maybe
 {
     public partial class StatsPage : Form
     {
-        MySqlConnection connection = new MySqlConnection("SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;");
+        MySqlConnection connection = new MySqlConnection(Connect.conn_string);
         private List<string> List_Gamemode = new List<string>();
         private Form form_rtn;
 
