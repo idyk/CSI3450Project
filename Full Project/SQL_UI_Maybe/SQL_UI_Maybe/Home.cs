@@ -18,6 +18,7 @@ namespace SQL_UI_Maybe
         private List<string> List_Game = new List<string>();
         private Form form_rtn;
         private int player_num = 0, accnt_num = 0;
+        private bool noPlayerID = true;
         
         public Home(Form form_rtn, int accnt_num, string accnt_name)
         {
@@ -97,6 +98,9 @@ namespace SQL_UI_Maybe
 
         private void changePageState(bool isPlayerID, string username = "")
         {
+            //set the no player ID boolean
+            noPlayerID = !isPlayerID;
+            
             //return the combo box selections to default
             cbx_Game.SelectedIndex = 0;
 
@@ -302,6 +306,10 @@ namespace SQL_UI_Maybe
                 }
             }
 
+            //exit if there is no player ID
+            if (noPlayerID)
+                return;
+
             try
             {
                 //refresh the game stats
@@ -316,6 +324,10 @@ namespace SQL_UI_Maybe
 
         private void cbx_Gamemode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //exit if there is no player ID
+            if (noPlayerID)
+                return;
+
             //create game and gamemode strings
             string game, gamemode;
             
