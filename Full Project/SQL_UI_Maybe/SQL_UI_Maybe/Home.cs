@@ -242,7 +242,78 @@ namespace SQL_UI_Maybe
 
         private void cbx_Game_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //create game string and index
+            string game;
+            int game_idx;
 
+            //attempt to retrieve the selected item from the combo boxes
+            try
+            {
+                game_idx = cbx_Game.SelectedIndex; 
+                game = cbx_Game.SelectedItem.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("At least one combo box did not have a valid choice selected.\n" +
+                                "Please select a valid option for all combo boxes.");
+                return;
+            }
+
+            //select the appropriate list of gamemodes
+            if (game_idx == 0)
+            {
+                cbx_Gamemode.DataSource = List_Gamemode;
+            }
+            else
+            {
+                //list for gamemodes associated with the selected game
+                List<string> List_gmfg = new List<string>();
+
+                //SQL Query
+                string select_gamemode = "SELECT Gamemode_Name " +
+                                         "FROM Gametype_Info " +
+                                         "WHERE Game_Title = \"" + game + "\";";
+                try
+                {
+                    connection.Open();
+
+                    //Initialize the gamemode choices for the selected game
+                    MySqlCommand cmd = new MySqlCommand(select_gamemode, connection);
+                    List_gmfg.Add("All");
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        List_gmfg.Add(rdr[0].ToString());
+                    }
+                    rdr.Close();
+
+                    connection.Close();
+
+                    cbx_Gamemode.DataSource = List_gmfg;
+                }
+                catch (Exception ex)
+                {
+                    connection.Close(); 
+                    MessageBox.Show(ex.ToString());
+
+                    //return to default choices
+                    cbx_Game.SelectedIndex = 0;
+                    game = "All";
+                    cbx_Gamemode.DataSource = List_Gamemode;
+                }
+            }
+
+            try
+            {
+                //refresh both the game and gamemode stats
+                refreshGameStats(game);
+                refreshGamemodeStats(game, "All");
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cbx_Gamemode_SelectedIndexChanged(object sender, EventArgs e)
