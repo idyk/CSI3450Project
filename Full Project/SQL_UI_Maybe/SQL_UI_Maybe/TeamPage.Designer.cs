@@ -60,6 +60,7 @@ namespace SQL_UI_Maybe
             this.txt_newTeamName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Home = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -411,11 +412,22 @@ namespace SQL_UI_Maybe
             this.btn_Home.UseVisualStyleBackColor = true;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(599, 386);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(75, 27);
+            this.btn_refresh.TabIndex = 5;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
             // TeamPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 421);
+            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lbl_team);
@@ -476,5 +488,6 @@ namespace SQL_UI_Maybe
         private System.Windows.Forms.TextBox txt_teamSearch;
         private System.Windows.Forms.Button btn_join;
         private System.Windows.Forms.Button btn_leave;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }

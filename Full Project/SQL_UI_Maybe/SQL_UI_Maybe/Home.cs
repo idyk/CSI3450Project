@@ -115,10 +115,14 @@ namespace SQL_UI_Maybe
             
             //return the combo box selections to default
             cbx_Game.SelectedIndex = 0;
+            cbx_Gamemode.SelectedIndex = 0;
 
             //refresh the stats
-            refreshGamemodeStats("All", "All");
-            refreshGameStats("All");
+            if (isPlayerID)
+            {
+                refreshGamemodeStats("All", "All");
+                refreshGameStats("All");
+            }
 
             //set the username label and refresh the stats if there is a player ID
             if (isPlayerID)
