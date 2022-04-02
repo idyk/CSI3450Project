@@ -319,10 +319,10 @@ namespace SQL_UI_Maybe
             // tbl_teams
             // 
             this.tbl_teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_teams.Location = new System.Drawing.Point(55, 57);
+            this.tbl_teams.Location = new System.Drawing.Point(40, 57);
             this.tbl_teams.Name = "tbl_teams";
             this.tbl_teams.RowTemplate.Height = 25;
-            this.tbl_teams.Size = new System.Drawing.Size(230, 223);
+            this.tbl_teams.Size = new System.Drawing.Size(257, 223);
             this.tbl_teams.TabIndex = 3;
             // 
             // btn_search

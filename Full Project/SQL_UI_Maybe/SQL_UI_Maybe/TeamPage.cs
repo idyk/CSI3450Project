@@ -424,7 +424,24 @@ namespace SQL_UI_Maybe
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            string teamSearch = txt_teamSearch.Text.Trim();
 
+            //determine if the text box input is valid
+            if (teamSearch.Contains('\"'))
+                MessageBox.Show("Invalid text box search input!");
+            else
+            {
+                //attempt to perform a search for the specified team
+                try
+                {
+                    updateTeamSearch(teamSearch);
+                }
+                catch (Exception ex)
+                {
+                    connection.Close();
+                    MessageBox.Show("The search was unsuccessful.");
+                }
+            }
         }
 
         private void btn_leave_Click(object sender, EventArgs e)
