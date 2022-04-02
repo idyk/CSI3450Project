@@ -12,7 +12,7 @@ namespace SQL_UI_Maybe
     public partial class StatsPage : Form
     {
         MySqlConnection connection = new MySqlConnection(Connect.conn_string);
-        private List<string> List_Gamemode = new List<string>();
+        private List<string> List_Gamemode;
         private Form form_rtn;
 
         public StatsPage(Form form_rtn, List<string> List_Game, List<string> List_Gamemode)

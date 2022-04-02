@@ -19,6 +19,9 @@
     <Compile Update="StatsPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TeamPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VideoGameDB - Admin View.cs">
       <SubType>Form</SubType>
     </Compile>
