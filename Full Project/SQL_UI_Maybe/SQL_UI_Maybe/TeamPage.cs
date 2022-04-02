@@ -568,7 +568,68 @@ namespace SQL_UI_Maybe
 
         private void btn_create_Click(object sender, EventArgs e)
         {
+            //declare and initialize variables
+            string newTeamName = txt_newTeamName.Text.Trim();
+            int id = 0;
 
+            //ensure the text box input is valid
+            if (newTeamName.Contains('\"') || (newTeamName.Length == 0))
+            {
+                MessageBox.Show("Invalid Team Name.");
+                return;
+            }
+
+            string query_ID = "SELECT Team_ID FROM Team ORDER BY Team_ID;";
+            try
+            {
+                MySqlCommand cmd;
+                MySqlDataReader rdr;
+
+                connection.Open();
+
+                //perform a query for the IDs
+                cmd = new MySqlCommand(query_ID, connection);
+                rdr = cmd.ExecuteReader();
+
+                //loop through the ID's until you find a missing one
+                while (rdr.Read())
+                {
+                    if (!rdr[0].ToString().Equals(id.ToString()))
+                        break;
+                    id++;
+                }
+                rdr.Close();
+
+                //execute a transaction to create a new team
+                string transaction = "START TRANSACTION;\n" +
+                                     "INSERT INTO Team (Team_ID, Player_ID_Leader, Team_Name) " +
+                                     "VALUES (" + id + ", " + player_num + ", \"" + newTeamName + "\");\n" +
+                                     "UPDATE Player SET Team_ID = " + id + " WHERE Player_ID = " + player_num + ";";
+                cmd = new MySqlCommand(transaction, connection);
+                if (cmd.ExecuteNonQuery() < 2)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to create a new team!");
+                    return;
+                }
+
+                cmd = new MySqlCommand("COMMIT;", connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                //update the user interface
+                team_num = id;
+                leader_num = player_num;
+                team_name = newTeamName;
+                inTeam = true;
+                leadTeam = true;
+                updateUIOptions();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_chngTeamName_Click(object sender, EventArgs e)
