@@ -419,7 +419,51 @@ namespace SQL_UI_Maybe
 
         private void btn_delTeam_Click(object sender, EventArgs e)
         {
+            //execute a transaction to delete your team
+            string t1 = "START TRANSACTION;\n" +
+                        "UPDATE Player SET Team_ID = Null WHERE Team_ID = " + team_num + ";";
 
+            string t2 = "DELETE FROM Team WHERE Team_ID = " + team_num + ";";
+
+            try
+            {
+                //remove all users from the team
+                MySqlCommand cmd = new MySqlCommand(t1, connection);
+                connection.Open();
+
+                //if no users were removed, there was an error
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to delete your team!");
+                    return;
+                }
+
+                //delete the team from the team table
+                cmd = new MySqlCommand(t2, connection);
+
+                //if no teams were deleted, there was an error
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to delete your team!");
+                    return;
+                }
+
+                cmd = new MySqlCommand("COMMIT;", connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                //update the user interface
+                inTeam = false;
+                leadTeam = false;
+                updateUIOptions();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
