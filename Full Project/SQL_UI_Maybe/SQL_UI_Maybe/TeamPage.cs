@@ -13,6 +13,7 @@ namespace SQL_UI_Maybe
     {
         private MySqlConnection connection = new MySqlConnection(Connect.conn_string);
         private int player_num;
+        private string player_username;
         private Form form_rtn;
         private List<string> List_Gamemode;
 
@@ -409,12 +410,84 @@ namespace SQL_UI_Maybe
 
         private void btn_chngLeader_Click(object sender, EventArgs e)
         {
+            //ensure the user has one row selected
+            if (tbl_teams.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Error!\nYou must select exactly one entire row.");
+                return;
+            }
 
+            string username_lead = tbl_members.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void btn_kick_Click(object sender, EventArgs e)
         {
+            //ensure the user has one row selected
+            if (tbl_members.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Error!\nYou must select exactly one entire row.");
+                return;
+            }
 
+            string username_kick = tbl_members.SelectedRows[0].Cells[0].Value.ToString();
+
+            string query = "SELECT Player_Username FROM Player WHERE Player_ID = " + player_num + ";";
+
+            string sql = "UPDATE Player " +
+                         "SET Team_ID = Null " +
+                         "WHERE Player_Username = \"" + username_kick + "\" and Team_ID = " + team_num + ";";
+
+            try
+            {
+                connection.Open();
+
+                //check to ensure you aren't kicking yourself
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    if (username_kick.Equals(rdr[0].ToString()))
+                    {
+                        rdr.Close();
+                        connection.Close();
+                        MessageBox.Show("Error!\nYou cannot kick yourself.");
+                        return;
+                    }
+                }
+                else
+                {
+                    rdr.Close();
+                    connection.Close();
+                    MessageBox.Show("Error!\nPlease refresh the page.");
+                    return;
+                }
+                rdr.Close();
+
+                //kick the player
+                cmd = new MySqlCommand(sql, connection);
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to kick the selected player!\nTry reloading the page.");
+                    return;
+                }
+
+                connection.Close();
+
+                //update the team members
+                updateTeamMembers();
+
+                //update the statistics
+                cbx_Game.SelectedIndex = 0;
+                cbx_Gamemode.SelectedIndex = 0;
+                updateGamemodeStats("All", "All");
+                updateGameStats("All");
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_delTeam_Click(object sender, EventArgs e)
