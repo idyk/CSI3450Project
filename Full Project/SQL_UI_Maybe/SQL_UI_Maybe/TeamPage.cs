@@ -634,7 +634,46 @@ namespace SQL_UI_Maybe
 
         private void btn_chngTeamName_Click(object sender, EventArgs e)
         {
+            //declare and initialize variables
+            string newTeamName = txt_newTeamName.Text.Trim();
 
+            //ensure the text box input is valid
+            if (newTeamName.Contains('\"') || (newTeamName.Length == 0))
+            {
+                MessageBox.Show("Invalid Team Name.");
+                return;
+            }
+
+            //create sql command the update the database
+            string sql = "UPDATE Team " +
+                         "SET Team_Name = \"" + newTeamName + "\" " +
+                         "WHERE Team_ID = " + team_num + ";";
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+            //Attempt to run the sql command
+            try
+            {
+                connection.Open();
+
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to update your team name!");
+                    return;
+                }
+
+                connection.Close();
+
+                //update the team name
+                team_name = newTeamName;
+                updateTeamName();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
