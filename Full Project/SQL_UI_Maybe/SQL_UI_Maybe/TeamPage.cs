@@ -13,7 +13,6 @@ namespace SQL_UI_Maybe
     {
         private MySqlConnection connection = new MySqlConnection(Connect.conn_string);
         private int player_num;
-        private string player_username;
         private Form form_rtn;
         private List<string> List_Gamemode;
 
@@ -411,13 +410,68 @@ namespace SQL_UI_Maybe
         private void btn_chngLeader_Click(object sender, EventArgs e)
         {
             //ensure the user has one row selected
-            if (tbl_teams.SelectedRows.Count != 1)
+            if (tbl_members.SelectedRows.Count != 1)
             {
                 MessageBox.Show("Error!\nYou must select exactly one entire row.");
                 return;
             }
 
             string username_lead = tbl_members.SelectedRows[0].Cells[0].Value.ToString();
+            int newLeadNum;
+
+            string query = "SELECT Player_ID FROM Player WHERE Player_Username = \"" + username_lead + "\";";
+
+            try
+            {
+                connection.Open();
+
+                //find the ID of the new leader
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                    newLeadNum = Convert.ToInt32(rdr[0].ToString());
+                else
+                {
+                    rdr.Close();
+                    connection.Close();
+                    MessageBox.Show("Error!\nPlease refresh the page.");
+                    return;
+                }
+                rdr.Close();
+
+                //exit if the chosen player is the user
+                if (newLeadNum == player_num)
+                {
+                    connection.Close();
+                    MessageBox.Show("You are already the team leader.");
+                    return;
+                }
+
+                string sql = "UPDATE Team " +
+                             "SET Player_ID_Leader = " + newLeadNum + " " +
+                             "WHERE Team_ID = " + team_num + ";";
+
+                //make the player the new leader
+                cmd = new MySqlCommand(sql, connection);
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to make the selected player the new team leader!\nTry reloading the page.");
+                    return;
+                }
+
+                connection.Close();
+
+                //update user interface
+                leader_num = newLeadNum;
+                leadTeam = false;
+                updateUIOptions();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_kick_Click(object sender, EventArgs e)
@@ -450,7 +504,7 @@ namespace SQL_UI_Maybe
                     {
                         rdr.Close();
                         connection.Close();
-                        MessageBox.Show("Error!\nYou cannot kick yourself.");
+                        MessageBox.Show("You cannot kick yourself.");
                         return;
                     }
                 }
