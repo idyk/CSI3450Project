@@ -73,24 +73,9 @@ namespace SQL_UI_Maybe
 
         private void updateUIOptions()
         {
-            //update the Team Name
-            updateTeamName();
-
-            //update the team leader
-            updateTeamLeader();
-
-            //update the team members
-            updateTeamMembers();
-
-            //update the statistics
-            cbx_Game.SelectedIndex = 0;
-            cbx_Gamemode.SelectedIndex = 0;
-            updateGamemodeStats("All", "All");
-            updateGameStats("All");
-
-            //game and gamemode combo boxes
-            cbx_Game.Enabled = inTeam;
-            cbx_Gamemode.Enabled = inTeam;
+            //join/leave button options
+            btn_leave.Enabled = inTeam;
+            btn_join.Enabled = !inTeam;
 
             //team leader options for team members
             btn_chngLeader.Enabled = leadTeam;
@@ -100,13 +85,28 @@ namespace SQL_UI_Maybe
             btn_delTeam.Enabled = leadTeam;
             btn_delTeam.Visible = leadTeam;
 
-            //join/leave button options
-            btn_leave.Enabled = inTeam;
-            btn_join.Enabled = !inTeam;
-
             //create/edit team name button options
             btn_create.Enabled = !inTeam;
             btn_chngTeamName.Enabled = leadTeam;
+
+            //game and gamemode combo boxes
+            cbx_Game.Enabled = inTeam;
+            cbx_Gamemode.Enabled = inTeam;
+
+            //update the Team Name
+            updateTeamName();
+
+            //update the team members
+            updateTeamMembers();
+
+            //update the team leader
+            updateTeamLeader();
+
+            //update the statistics
+            cbx_Game.SelectedIndex = 0;
+            cbx_Gamemode.SelectedIndex = 0;
+            updateGamemodeStats("All", "All");
+            updateGameStats("All");
         }
 
         private void updateTeamName()
@@ -446,7 +446,43 @@ namespace SQL_UI_Maybe
 
         private void btn_leave_Click(object sender, EventArgs e)
         {
+            //exit the function if you are the team leader
+            if (leadTeam)
+            {
+                MessageBox.Show("You cannot leave a team if you are the leader.");
+                return;
+            }
+            
+            //create the sql command to leave the current team
+            string sql = "UPDATE Player " +
+                         "SET Team_ID = Null " +
+                         "WHERE Player_ID = " + player_num + ";";
+            
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
 
+            //attempt to run the sql command
+            try
+            {
+                connection.Open();
+
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to leave your current team!");
+                    return;
+                }
+
+                connection.Close();
+
+                //update the user interface
+                inTeam = false;
+                updateUIOptions();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_join_Click(object sender, EventArgs e)
