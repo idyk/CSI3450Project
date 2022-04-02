@@ -80,7 +80,7 @@ namespace SQL_UI_Maybe
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(280, 9);
+            this.label1.Location = new System.Drawing.Point(279, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 2;
@@ -89,7 +89,7 @@ namespace SQL_UI_Maybe
             // lbl_team
             // 
             this.lbl_team.AutoSize = true;
-            this.lbl_team.Location = new System.Drawing.Point(269, 43);
+            this.lbl_team.Location = new System.Drawing.Point(12, 43);
             this.lbl_team.Name = "lbl_team";
             this.lbl_team.Size = new System.Drawing.Size(149, 15);
             this.lbl_team.TabIndex = 3;
@@ -178,10 +178,14 @@ namespace SQL_UI_Maybe
             // 
             // tbl_GmdStats
             // 
+            this.tbl_GmdStats.AllowUserToAddRows = false;
+            this.tbl_GmdStats.AllowUserToDeleteRows = false;
+            this.tbl_GmdStats.AllowUserToOrderColumns = true;
             this.tbl_GmdStats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_GmdStats.Location = new System.Drawing.Point(4, 18);
             this.tbl_GmdStats.Margin = new System.Windows.Forms.Padding(2);
             this.tbl_GmdStats.Name = "tbl_GmdStats";
+            this.tbl_GmdStats.ReadOnly = true;
             this.tbl_GmdStats.RowHeadersWidth = 82;
             this.tbl_GmdStats.RowTemplate.Height = 33;
             this.tbl_GmdStats.Size = new System.Drawing.Size(311, 184);
@@ -201,10 +205,14 @@ namespace SQL_UI_Maybe
             // 
             // tbl_GameStats
             // 
+            this.tbl_GameStats.AllowUserToAddRows = false;
+            this.tbl_GameStats.AllowUserToDeleteRows = false;
+            this.tbl_GameStats.AllowUserToOrderColumns = true;
             this.tbl_GameStats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_GameStats.Location = new System.Drawing.Point(4, 18);
             this.tbl_GameStats.Margin = new System.Windows.Forms.Padding(2);
             this.tbl_GameStats.Name = "tbl_GameStats";
+            this.tbl_GameStats.ReadOnly = true;
             this.tbl_GameStats.RowHeadersWidth = 82;
             this.tbl_GameStats.RowTemplate.Height = 33;
             this.tbl_GameStats.Size = new System.Drawing.Size(295, 184);
@@ -263,9 +271,12 @@ namespace SQL_UI_Maybe
             // 
             // tbl_members
             // 
+            this.tbl_members.AllowUserToAddRows = false;
+            this.tbl_members.AllowUserToDeleteRows = false;
             this.tbl_members.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_members.Location = new System.Drawing.Point(213, 32);
             this.tbl_members.Name = "tbl_members";
+            this.tbl_members.ReadOnly = true;
             this.tbl_members.RowTemplate.Height = 25;
             this.tbl_members.Size = new System.Drawing.Size(215, 253);
             this.tbl_members.TabIndex = 1;
@@ -273,7 +284,7 @@ namespace SQL_UI_Maybe
             // lbl_leader
             // 
             this.lbl_leader.AutoSize = true;
-            this.lbl_leader.Location = new System.Drawing.Point(227, 14);
+            this.lbl_leader.Location = new System.Drawing.Point(213, 14);
             this.lbl_leader.Name = "lbl_leader";
             this.lbl_leader.Size = new System.Drawing.Size(188, 15);
             this.lbl_leader.TabIndex = 0;
@@ -318,9 +329,12 @@ namespace SQL_UI_Maybe
             // 
             // tbl_teams
             // 
+            this.tbl_teams.AllowUserToAddRows = false;
+            this.tbl_teams.AllowUserToDeleteRows = false;
             this.tbl_teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_teams.Location = new System.Drawing.Point(40, 57);
             this.tbl_teams.Name = "tbl_teams";
+            this.tbl_teams.ReadOnly = true;
             this.tbl_teams.RowTemplate.Height = 25;
             this.tbl_teams.Size = new System.Drawing.Size(257, 223);
             this.tbl_teams.TabIndex = 3;

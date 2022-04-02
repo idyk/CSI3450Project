@@ -487,7 +487,70 @@ namespace SQL_UI_Maybe
 
         private void btn_join_Click(object sender, EventArgs e)
         {
+            //ensure the user has one row selected
+            if (tbl_teams.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Error!\nYou must select exactly one entire row.");
+                return;
+            }
 
+            //create and initialize variables
+            string newTeamName = tbl_teams.SelectedRows[0].Cells[0].Value.ToString();
+            int newTeamNum, newLeadNum;
+
+            //construct query
+            string query = "SELECT Team_ID, Player_ID_Leader " +
+                           "FROM Team " +
+                           "WHERE Team_Name = \"" + newTeamName + "\";";
+
+            //attempt to run the query and the sql command
+            try
+            {
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    newTeamNum = Convert.ToInt32(rdr[0].ToString());
+                    newLeadNum = Convert.ToInt32(rdr[1].ToString());
+                }
+                else
+                {
+                    rdr.Close();
+                    connection.Close();
+                    MessageBox.Show("Error!\nSelected Team was not Found.\nPlease refresh the page.");
+                    return;
+                }
+                rdr.Close();
+
+                string sql = "UPDATE Player " +
+                             "SET Team_ID = " + newTeamNum + " " +
+                             "WHERE Player_ID = " + player_num + ";";
+
+                cmd = new MySqlCommand(sql, connection);
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    connection.Close();
+                    MessageBox.Show("Error!\nYou were unable to join your selected team!");
+                    return;
+                }
+
+                connection.Close();
+
+                //update the user interface
+                team_num = newTeamNum;
+                leader_num = newLeadNum;
+                team_name = newTeamName;
+                inTeam = true;
+                leadTeam = false;
+                updateUIOptions();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
