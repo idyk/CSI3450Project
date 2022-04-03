@@ -29,7 +29,7 @@ namespace SQL_UI_Maybe
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.uploadButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -83,16 +83,16 @@ namespace SQL_UI_Maybe
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // uploadButton
             // 
-            this.button1.Location = new System.Drawing.Point(589, 206);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 24);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Upload";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.uploadButton.Location = new System.Drawing.Point(589, 206);
+            this.uploadButton.Name = "uploadButton";
+            this.uploadButton.Size = new System.Drawing.Size(69, 24);
+            this.uploadButton.TabIndex = 0;
+            this.uploadButton.Text = "Upload";
+            this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Visible = false;
+            this.uploadButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -742,7 +742,7 @@ namespace SQL_UI_Maybe
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uploadButton);
             this.Name = "Form3";
             this.Text = "VideoGameDB - Admin View";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -754,7 +754,7 @@ namespace SQL_UI_Maybe
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;

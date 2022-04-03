@@ -1719,7 +1719,7 @@ namespace SQL_UI_Maybe
             label3.Visible = true;
             uploadListBox.Visible = true;
             label4.Visible = true;
-            button1.Visible = true;
+            uploadButton.Visible = true;
             checkBox1.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
@@ -1774,7 +1774,7 @@ namespace SQL_UI_Maybe
             label3.Visible = false;
             uploadListBox.Visible = false;
             label4.Visible = false;
-            button1.Visible = false;
+            uploadButton.Visible = false;
             checkBox1.Visible = false;
             label1.Visible = false;
             label2.Visible = false;
