@@ -15,11 +15,12 @@ namespace SQL_UI_Maybe
 
     public partial class Form3 : Form
     {
-
+        private Form form_rtn;
         
-        public Form3()
+        public Form3(Form form_rtn)
         {          
             InitializeComponent();
+            this.form_rtn = form_rtn;
             gameStatList.Visible = false;
             gameStatTypeList.Visible = false;
             statList.Visible = false;
@@ -49,7 +50,7 @@ namespace SQL_UI_Maybe
         private void button1_Click(object sender, EventArgs e)
         {
             //127.0.0.1  35.199.39.10
-            MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=VideoGameDB;UID=root;PWD=root;");
+            MySqlConnection connection = new MySqlConnection(Connect.conn_string);
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.CheckFileExists = true;
             openFileDialog.Filter = "csv files (*.csv)|*.csv";
@@ -76,14 +77,8 @@ namespace SQL_UI_Maybe
                         {
                             csvParser.SetDelimiters(new string[] { "," });
                             csvParser.HasFieldsEnclosedInQuotes = true;
-
-                            string[] columns = csvParser.ReadFields();
                             csvParser.ReadLine();
-                            string column1 = columns[0];
-                            string column2 = columns[1];
 
-                            System.Diagnostics.Debug.WriteLine("COLUMN 1: " + column1);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 2: " + column2);
 
                             while (!csvParser.EndOfData)
                             {
@@ -1310,7 +1305,7 @@ namespace SQL_UI_Maybe
                 teamListBoxUpdate.Visible = true;
             }
             //  35.199.39.10   127.0.0.1
-            MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=VideoGameDB;UID=root;PWD=root;");
+            MySqlConnection connection = new MySqlConnection(Connect.conn_string);
 
             connection.Open();
 
@@ -1334,7 +1329,7 @@ namespace SQL_UI_Maybe
         private void button2_Click_1(object sender, EventArgs e)
         {
             uploadListBox.ClearSelected();
-            MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=VideoGameDB;UID=root;PWD=root;");
+            MySqlConnection connection = new MySqlConnection(Connect.conn_string);
            
             connection.Open();
             try
@@ -1737,6 +1732,7 @@ namespace SQL_UI_Maybe
 
         private void button3_Click(object sender, EventArgs e)
         {
+            deleteLabel.Visible = false;
             button2.Visible = false;
             label11.Visible = true;
             label3.Visible = true;
@@ -1790,6 +1786,7 @@ namespace SQL_UI_Maybe
 
         private void button4_Click(object sender, EventArgs e)
         {
+            deleteLabel.Visible = false;
             button2.Visible = true;
             label11.Visible = false;
             button4.Visible = false;
@@ -1837,7 +1834,7 @@ namespace SQL_UI_Maybe
         private void uploadListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //  35.199.39.10   127.0.0.1
-            MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=VideoGameDB;UID=root;PWD=root;");
+            MySqlConnection connection = new MySqlConnection(Connect.conn_string);
 
             connection.Open();
 
@@ -1849,19 +1846,25 @@ namespace SQL_UI_Maybe
 
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
-            da.Fill(ds);
-            dt = ds.Tables[0];
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            try
+            {
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch(Exception exc)
+            {
+
+            }
 
             connection.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form Form1 = new Form1();
-            this.Hide();
-            Form1.Show();
+            this.Close();
+            form_rtn.Show();
         }
 
         private void label12_Click(object sender, EventArgs e)

@@ -9,11 +9,14 @@ namespace SQL_UI_Maybe
 {
     public static class Connect
     {
-        private static MySqlConnection connection;
+        //public const string conn_string = "SERVER=35.199.39.10;DATABASE=VideoGameDB;UID=root;PWD=root;";
+        public const string conn_string = "SERVER=127.0.0.1;DATABASE=VideoGameDB;UID=root;PWD=root;";
+
+        /*private static MySqlConnection connection;
         private static MySqlCommand command = null;
         private static DataTable table;
         private static MySqlDataAdapter adapter;
-
+        
         public static void EstablishConnection()
         {
             try
@@ -48,6 +51,6 @@ namespace SQL_UI_Maybe
             connection.Close();
             return command;
         }
-
+        */
     }
 }

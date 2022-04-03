@@ -37,12 +37,10 @@ namespace SQL_UI_Maybe
             this.guest = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Stats = new System.Windows.Forms.Button();
-            this.Friends = new System.Windows.Forms.Button();
-            this.Team = new System.Windows.Forms.Button();
-            this.GameStats = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
             this.Admin = new System.Windows.Forms.Button();
             this.MakeAccount = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -118,42 +116,15 @@ namespace SQL_UI_Maybe
             this.label2.TabIndex = 9;
             this.label2.Text = "No account? ";
             // 
-            // Stats
+            // btn_home
             // 
-            this.Stats.Location = new System.Drawing.Point(464, 336);
-            this.Stats.Name = "Stats";
-            this.Stats.Size = new System.Drawing.Size(111, 23);
-            this.Stats.TabIndex = 10;
-            this.Stats.Text = "Stats";
-            this.Stats.UseVisualStyleBackColor = true;
-            this.Stats.Click += new System.EventHandler(this.Stats_Click);
-            // 
-            // Friends
-            // 
-            this.Friends.Location = new System.Drawing.Point(613, 336);
-            this.Friends.Name = "Friends";
-            this.Friends.Size = new System.Drawing.Size(110, 23);
-            this.Friends.TabIndex = 11;
-            this.Friends.Text = "Friends";
-            this.Friends.UseVisualStyleBackColor = true;
-            // 
-            // Team
-            // 
-            this.Team.Location = new System.Drawing.Point(464, 389);
-            this.Team.Name = "Team";
-            this.Team.Size = new System.Drawing.Size(111, 23);
-            this.Team.TabIndex = 12;
-            this.Team.Text = "Team";
-            this.Team.UseVisualStyleBackColor = true;
-            // 
-            // GameStats
-            // 
-            this.GameStats.Location = new System.Drawing.Point(613, 389);
-            this.GameStats.Name = "GameStats";
-            this.GameStats.Size = new System.Drawing.Size(110, 23);
-            this.GameStats.TabIndex = 13;
-            this.GameStats.Text = "Game Stats";
-            this.GameStats.UseVisualStyleBackColor = true;
+            this.btn_home.Location = new System.Drawing.Point(464, 336);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(111, 23);
+            this.btn_home.TabIndex = 10;
+            this.btn_home.Text = "Home";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // Admin
             // 
@@ -174,17 +145,25 @@ namespace SQL_UI_Maybe
             this.MakeAccount.Text = "Make an account";
             this.MakeAccount.UseVisualStyleBackColor = true;
             // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(698, 399);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(90, 43);
+            this.btn_close.TabIndex = 16;
+            this.btn_close.Text = "Exit the Application";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.MakeAccount);
             this.Controls.Add(this.Admin);
-            this.Controls.Add(this.GameStats);
-            this.Controls.Add(this.Team);
-            this.Controls.Add(this.Friends);
-            this.Controls.Add(this.Stats);
+            this.Controls.Add(this.btn_home);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.guest);
@@ -210,12 +189,10 @@ namespace SQL_UI_Maybe
         private System.Windows.Forms.Button guest;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Stats;
-        private System.Windows.Forms.Button Friends;
-        private System.Windows.Forms.Button Team;
-        private System.Windows.Forms.Button GameStats;
+        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button Admin;
         private System.Windows.Forms.Button MakeAccount;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 
