@@ -199,19 +199,7 @@ namespace SQL_UI_Maybe
                             csvParser.SetDelimiters(new string[] { "," });
                             csvParser.HasFieldsEnclosedInQuotes = true;
 
-                            string[] columns = csvParser.ReadFields();
                             csvParser.ReadLine();
-                            string column1 = columns[0];
-                            string column2 = columns[1];
-                            string column3 = columns[2];
-                            string column4 = columns[3];
-                            string column5 = columns[4];
-
-                            System.Diagnostics.Debug.WriteLine("COLUMN 1: " + column1);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 2: " + column2);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 3: " + column3);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 4: " + column4);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 5: " + column5);
 
                             while (!csvParser.EndOfData)
                             {
@@ -255,15 +243,8 @@ namespace SQL_UI_Maybe
                         {
                             csvParser.SetDelimiters(new string[] { "," });
                             csvParser.HasFieldsEnclosedInQuotes = true;
-                            string[] columns = csvParser.ReadFields();
-                            csvParser.ReadLine();
-                            string column1 = columns[0];
-                            string column2 = columns[1];
-                            string column3 = columns[2];
 
-                            System.Diagnostics.Debug.WriteLine("COLUMN 1: " + column1);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 2: " + column2);
-                            System.Diagnostics.Debug.WriteLine("COLUMN 3: " + column3);
+                            csvParser.ReadLine();
 
                             while (!csvParser.EndOfData)
                             {
