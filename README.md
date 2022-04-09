@@ -1,21 +1,21 @@
 # CSI3450Project
 VideoGameDB
 
-!!!INITIALIZATION STEP!!! 
+!!!INITIALIZATION STEP!!!   
 Before starting our database program, make sure you have the mySQL Workbench 8.0 CE local server created. To do this, make a server and an account with the following credentials:
-Hostname: localhost
-Port: 3306
-Username: appProg
-Password: root
-Make sure to run the two provided .sql files, ERDCreationScript.sql and ERDInitializationScript.sql from our GitHub on this local server in order for the application to operate correctly.
-Once the server is set up and the query files are ran, open our program through one of the following methods:
+Hostname: localhost  
+Port: 3306  
+Username: appProg  
+Password: root  
+Make sure to run the two provided .sql files, ERDCreationScript.sql and ERDInitializationScript.sql from our GitHub on this local server in order for the application to operate correctly.  
+Once the server is set up and the query files are ran, open our program through one of the following methods:  
 
 -> .exe method: From the main folder on the GitHub repository, navigate to VideoGameDB_UI/VideoGameDB_UI/bin/Release and then double click on the VideoGameDB_UI.exe file.
 
 -> Through Visual Studio 2019:  Launch the .sln file included in our code from GitHub. This should lead you to the code. Press the green play button at the top of the window in order to execute our application.
 
 
-!!!FOLDER FORMAT!!!
+!!!FOLDER FORMAT!!!  
 If downloaded directly from GitHub, everything should be contained in a folder named “CSI3450Project-main”.   
 CSI3450Project-main will contain the following:  
 Test Data - a folder containing two .csv files, to be used accordingly to their file names in the Admin View upload window.  
