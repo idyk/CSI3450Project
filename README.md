@@ -16,8 +16,8 @@ Once the server is set up and the query files are ran, open our program through 
 
 
 !!!FOLDER FORMAT!!!
-If downloaded directly from GitHub, everything should be contained in a folder named “CSI3450Project-main”. 
-CSI3450Project-main will contain the following:
+If downloaded directly from GitHub, everything should be contained in a folder named “CSI3450Project-main”.   
+CSI3450Project-main will contain the following:  
 Test Data - a folder containing two .csv files, to be used accordingly to their file names in the Admin View upload window.  
 CSI3450 - Presentation - Team Sort and Destroy.pdf - Our team’s presentation.  
 ERDCreationScript.sql - The .sql file that creates the tables used in the database.  
