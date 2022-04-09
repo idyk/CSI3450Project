@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameDB_UI", "VideoGameDB_UI\VideoGameDB_UI.csproj", "{F628E927-4282-4DB4-A709-783C433E949B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F628E927-4282-4DB4-A709-783C433E949B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F628E927-4282-4DB4-A709-783C433E949B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F628E927-4282-4DB4-A709-783C433E949B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F628E927-4282-4DB4-A709-783C433E949B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E50DA6A8-C561-4508-ACD6-A1AE4EDE62BC}
+	EndGlobalSection
+EndGlobal
