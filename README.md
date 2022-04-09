@@ -2,7 +2,7 @@
 VideoGameDB
 
 !!!INITIALIZATION STEP!!!   
-Before starting our database program, make sure you have the mySQL Workbench 8.0 CE local server created. To do this, make a server and an account with the following credentials:
+Before starting our database program, make sure you have the mySQL Workbench 8.0 CE local server created. To do this, make a server and an account with the following credentials:  
 Hostname: localhost  
 Port: 3306  
 Username: appProg  
