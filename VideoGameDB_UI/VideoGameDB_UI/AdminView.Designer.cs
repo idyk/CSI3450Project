@@ -85,9 +85,9 @@ namespace VideoGameDB_UI
             // 
             // uploadButton
             // 
-            this.uploadButton.Location = new System.Drawing.Point(589, 206);
+            this.uploadButton.Location = new System.Drawing.Point(540, 183);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(69, 24);
+            this.uploadButton.Size = new System.Drawing.Size(59, 21);
             this.uploadButton.TabIndex = 0;
             this.uploadButton.Text = "Upload";
             this.uploadButton.UseVisualStyleBackColor = true;
@@ -97,8 +97,8 @@ namespace VideoGameDB_UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(260, 269);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label1.Location = new System.Drawing.Point(223, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 1;
@@ -108,8 +108,8 @@ namespace VideoGameDB_UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(340, 269);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label2.Location = new System.Drawing.Point(291, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 20);
             this.label2.TabIndex = 2;
@@ -120,21 +120,19 @@ namespace VideoGameDB_UI
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
             this.listBox1.Items.AddRange(new object[] {
             "INSERT INTO",
             "DELETE FROM",
             "UPDATE"});
-            this.listBox1.Location = new System.Drawing.Point(29, 113);
+            this.listBox1.Location = new System.Drawing.Point(25, 98);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(152, 154);
+            this.listBox1.Size = new System.Drawing.Size(131, 134);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
             this.listBox2.Items.AddRange(new object[] {
             "GameStat",
             "GameStatType",
@@ -145,26 +143,26 @@ namespace VideoGameDB_UI
             "Game",
             "Player",
             "Team"});
-            this.listBox2.Location = new System.Drawing.Point(199, 113);
+            this.listBox2.Location = new System.Drawing.Point(171, 98);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(153, 154);
+            this.listBox2.Size = new System.Drawing.Size(132, 134);
             this.listBox2.TabIndex = 4;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(589, 110);
+            this.textBox1.Location = new System.Drawing.Point(505, 95);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 23);
+            this.textBox1.Size = new System.Drawing.Size(171, 20);
             this.textBox1.TabIndex = 5;
             this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(877, 239);
+            this.button2.Location = new System.Drawing.Point(752, 207);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 46);
+            this.button2.Size = new System.Drawing.Size(174, 40);
             this.button2.TabIndex = 9;
             this.button2.Text = "Execute";
             this.button2.UseVisualStyleBackColor = true;
@@ -173,10 +171,10 @@ namespace VideoGameDB_UI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("November", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(131, 9);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.label5.Location = new System.Drawing.Point(112, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(340, 24);
+            this.label5.Size = new System.Drawing.Size(317, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "You are currently in the ADMIN view.";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -184,9 +182,9 @@ namespace VideoGameDB_UI
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(12, 49);
+            this.errorLabel.Location = new System.Drawing.Point(10, 42);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(58, 15);
+            this.errorLabel.Size = new System.Drawing.Size(58, 13);
             this.errorLabel.TabIndex = 11;
             this.errorLabel.Text = "                 ";
             this.errorLabel.Click += new System.EventHandler(this.errorLabel_Click);
@@ -194,8 +192,8 @@ namespace VideoGameDB_UI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(375, 110);
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.label6.Location = new System.Drawing.Point(321, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 23);
             this.label6.TabIndex = 12;
@@ -205,8 +203,8 @@ namespace VideoGameDB_UI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(375, 149);
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.label7.Location = new System.Drawing.Point(321, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 23);
             this.label7.TabIndex = 13;
@@ -216,8 +214,8 @@ namespace VideoGameDB_UI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(375, 187);
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.label8.Location = new System.Drawing.Point(321, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 23);
             this.label8.TabIndex = 14;
@@ -227,8 +225,8 @@ namespace VideoGameDB_UI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(375, 223);
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.label9.Location = new System.Drawing.Point(321, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 23);
             this.label9.TabIndex = 15;
@@ -238,8 +236,8 @@ namespace VideoGameDB_UI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(375, 256);
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.label10.Location = new System.Drawing.Point(321, 222);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 23);
             this.label10.TabIndex = 16;
@@ -249,185 +247,175 @@ namespace VideoGameDB_UI
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(589, 150);
+            this.textBox3.Location = new System.Drawing.Point(505, 130);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 23);
+            this.textBox3.Size = new System.Drawing.Size(171, 20);
             this.textBox3.TabIndex = 17;
             this.textBox3.Visible = false;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(589, 187);
+            this.textBox4.Location = new System.Drawing.Point(505, 162);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 23);
+            this.textBox4.Size = new System.Drawing.Size(171, 20);
             this.textBox4.TabIndex = 18;
             this.textBox4.Visible = false;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(589, 223);
+            this.textBox5.Location = new System.Drawing.Point(505, 193);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(199, 23);
+            this.textBox5.Size = new System.Drawing.Size(171, 20);
             this.textBox5.TabIndex = 19;
             this.textBox5.Visible = false;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(589, 256);
+            this.textBox6.Location = new System.Drawing.Point(505, 222);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(199, 23);
+            this.textBox6.Size = new System.Drawing.Size(171, 20);
             this.textBox6.TabIndex = 20;
             this.textBox6.Visible = false;
             // 
             // gameStatList
             // 
             this.gameStatList.FormattingEnabled = true;
-            this.gameStatList.ItemHeight = 15;
             this.gameStatList.Items.AddRange(new object[] {
             "Player_ID",
             "Game_ID",
             "GameStatType_ID",
             "GameStat_Value"});
-            this.gameStatList.Location = new System.Drawing.Point(504, 172);
+            this.gameStatList.Location = new System.Drawing.Point(432, 149);
             this.gameStatList.Name = "gameStatList";
-            this.gameStatList.Size = new System.Drawing.Size(120, 34);
+            this.gameStatList.Size = new System.Drawing.Size(103, 30);
             this.gameStatList.TabIndex = 21;
             this.gameStatList.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // gameStatTypeList
             // 
             this.gameStatTypeList.FormattingEnabled = true;
-            this.gameStatTypeList.ItemHeight = 15;
             this.gameStatTypeList.Items.AddRange(new object[] {
             "GameStatType_ID",
             "GameStatType_Name"});
-            this.gameStatTypeList.Location = new System.Drawing.Point(504, 172);
+            this.gameStatTypeList.Location = new System.Drawing.Point(432, 149);
             this.gameStatTypeList.Name = "gameStatTypeList";
-            this.gameStatTypeList.Size = new System.Drawing.Size(120, 34);
+            this.gameStatTypeList.Size = new System.Drawing.Size(103, 30);
             this.gameStatTypeList.TabIndex = 22;
             // 
             // statList
             // 
             this.statList.FormattingEnabled = true;
-            this.statList.ItemHeight = 15;
             this.statList.Items.AddRange(new object[] {
             "Player_ID",
             "Gametype_Gamemode_ID",
             "Gametype_Game_ID",
             "StatType_ID",
             "Stat_Value"});
-            this.statList.Location = new System.Drawing.Point(504, 172);
+            this.statList.Location = new System.Drawing.Point(432, 149);
             this.statList.Name = "statList";
-            this.statList.Size = new System.Drawing.Size(120, 34);
+            this.statList.Size = new System.Drawing.Size(103, 30);
             this.statList.TabIndex = 23;
             this.statList.SelectedIndexChanged += new System.EventHandler(this.statList_SelectedIndexChanged);
             // 
             // statTypeList
             // 
             this.statTypeList.FormattingEnabled = true;
-            this.statTypeList.ItemHeight = 15;
             this.statTypeList.Items.AddRange(new object[] {
             "StatType_ID",
             "StatType_Name"});
-            this.statTypeList.Location = new System.Drawing.Point(504, 172);
+            this.statTypeList.Location = new System.Drawing.Point(432, 149);
             this.statTypeList.Name = "statTypeList";
-            this.statTypeList.Size = new System.Drawing.Size(120, 34);
+            this.statTypeList.Size = new System.Drawing.Size(103, 30);
             this.statTypeList.TabIndex = 24;
             // 
             // gameTypeList
             // 
             this.gameTypeList.FormattingEnabled = true;
-            this.gameTypeList.ItemHeight = 15;
             this.gameTypeList.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Game_ID",
             "Gametype_ExpectedTime"});
-            this.gameTypeList.Location = new System.Drawing.Point(504, 172);
+            this.gameTypeList.Location = new System.Drawing.Point(432, 149);
             this.gameTypeList.Name = "gameTypeList";
-            this.gameTypeList.Size = new System.Drawing.Size(120, 34);
+            this.gameTypeList.Size = new System.Drawing.Size(103, 30);
             this.gameTypeList.TabIndex = 25;
             // 
             // gamemodeList
             // 
             this.gamemodeList.FormattingEnabled = true;
-            this.gamemodeList.ItemHeight = 15;
             this.gamemodeList.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Gamemode_Name"});
-            this.gamemodeList.Location = new System.Drawing.Point(504, 172);
+            this.gamemodeList.Location = new System.Drawing.Point(432, 149);
             this.gamemodeList.Name = "gamemodeList";
-            this.gamemodeList.Size = new System.Drawing.Size(120, 34);
+            this.gamemodeList.Size = new System.Drawing.Size(103, 30);
             this.gamemodeList.TabIndex = 26;
             // 
             // gameList
             // 
             this.gameList.FormattingEnabled = true;
-            this.gameList.ItemHeight = 15;
             this.gameList.Items.AddRange(new object[] {
             "Game_ID",
             "Game_Title"});
-            this.gameList.Location = new System.Drawing.Point(504, 172);
+            this.gameList.Location = new System.Drawing.Point(432, 149);
             this.gameList.Name = "gameList";
-            this.gameList.Size = new System.Drawing.Size(120, 34);
+            this.gameList.Size = new System.Drawing.Size(103, 30);
             this.gameList.TabIndex = 27;
             // 
             // playerList
             // 
             this.playerList.FormattingEnabled = true;
-            this.playerList.ItemHeight = 15;
             this.playerList.Items.AddRange(new object[] {
             "Player_ID",
             "Player_Username",
             "Team_ID",
             "Account_ID"});
-            this.playerList.Location = new System.Drawing.Point(504, 172);
+            this.playerList.Location = new System.Drawing.Point(432, 149);
             this.playerList.Name = "playerList";
-            this.playerList.Size = new System.Drawing.Size(120, 34);
+            this.playerList.Size = new System.Drawing.Size(103, 30);
             this.playerList.TabIndex = 28;
             // 
             // teamList
             // 
             this.teamList.FormattingEnabled = true;
-            this.teamList.ItemHeight = 15;
             this.teamList.Items.AddRange(new object[] {
             "Team_ID",
             "Player_ID_Leader",
             "Team_Name"});
-            this.teamList.Location = new System.Drawing.Point(504, 172);
+            this.teamList.Location = new System.Drawing.Point(432, 149);
             this.teamList.Name = "teamList";
-            this.teamList.Size = new System.Drawing.Size(120, 34);
+            this.teamList.Size = new System.Drawing.Size(103, 30);
             this.teamList.TabIndex = 29;
             // 
             // conditionsList
             // 
             this.conditionsList.FormattingEnabled = true;
-            this.conditionsList.ItemHeight = 15;
             this.conditionsList.Items.AddRange(new object[] {
             "=",
             "<",
             ">",
             "<=",
             ">="});
-            this.conditionsList.Location = new System.Drawing.Point(734, 176);
+            this.conditionsList.Location = new System.Drawing.Point(629, 153);
             this.conditionsList.Name = "conditionsList";
-            this.conditionsList.Size = new System.Drawing.Size(45, 34);
+            this.conditionsList.Size = new System.Drawing.Size(39, 30);
             this.conditionsList.TabIndex = 30;
             this.conditionsList.Visible = false;
             // 
             // deleteFromTextBox2
             // 
-            this.deleteFromTextBox2.Location = new System.Drawing.Point(794, 176);
+            this.deleteFromTextBox2.Location = new System.Drawing.Point(681, 153);
             this.deleteFromTextBox2.Name = "deleteFromTextBox2";
-            this.deleteFromTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.deleteFromTextBox2.Size = new System.Drawing.Size(86, 20);
             this.deleteFromTextBox2.TabIndex = 32;
             this.deleteFromTextBox2.Visible = false;
             // 
             // thingToChangeLabel
             // 
             this.thingToChangeLabel.AutoSize = true;
-            this.thingToChangeLabel.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.thingToChangeLabel.Location = new System.Drawing.Point(433, 179);
+            this.thingToChangeLabel.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.thingToChangeLabel.Location = new System.Drawing.Point(371, 155);
             this.thingToChangeLabel.Name = "thingToChangeLabel";
             this.thingToChangeLabel.Size = new System.Drawing.Size(542, 23);
             this.thingToChangeLabel.TabIndex = 33;
@@ -436,150 +424,141 @@ namespace VideoGameDB_UI
             // 
             // updateChangeTextBox
             // 
-            this.updateChangeTextBox.Location = new System.Drawing.Point(667, 179);
+            this.updateChangeTextBox.Location = new System.Drawing.Point(572, 155);
             this.updateChangeTextBox.Name = "updateChangeTextBox";
-            this.updateChangeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.updateChangeTextBox.Size = new System.Drawing.Size(86, 20);
             this.updateChangeTextBox.TabIndex = 34;
             // 
             // updateToTextBox
             // 
-            this.updateToTextBox.Location = new System.Drawing.Point(980, 180);
+            this.updateToTextBox.Location = new System.Drawing.Point(840, 156);
             this.updateToTextBox.Name = "updateToTextBox";
-            this.updateToTextBox.Size = new System.Drawing.Size(100, 23);
+            this.updateToTextBox.Size = new System.Drawing.Size(86, 20);
             this.updateToTextBox.TabIndex = 35;
             // 
             // teamListBoxUpdate
             // 
             this.teamListBoxUpdate.FormattingEnabled = true;
-            this.teamListBoxUpdate.ItemHeight = 15;
             this.teamListBoxUpdate.Items.AddRange(new object[] {
             "Team_ID",
             "Player_ID_Leader",
             "Team_Name"});
-            this.teamListBoxUpdate.Location = new System.Drawing.Point(827, 176);
+            this.teamListBoxUpdate.Location = new System.Drawing.Point(709, 153);
             this.teamListBoxUpdate.Name = "teamListBoxUpdate";
-            this.teamListBoxUpdate.Size = new System.Drawing.Size(120, 34);
+            this.teamListBoxUpdate.Size = new System.Drawing.Size(103, 30);
             this.teamListBoxUpdate.TabIndex = 36;
             // 
             // playerListBoxUpdate
             // 
             this.playerListBoxUpdate.FormattingEnabled = true;
-            this.playerListBoxUpdate.ItemHeight = 15;
             this.playerListBoxUpdate.Items.AddRange(new object[] {
             "Player_ID",
             "Player_Username",
             "Team_ID",
             "Account_ID"});
-            this.playerListBoxUpdate.Location = new System.Drawing.Point(827, 176);
+            this.playerListBoxUpdate.Location = new System.Drawing.Point(709, 153);
             this.playerListBoxUpdate.Name = "playerListBoxUpdate";
-            this.playerListBoxUpdate.Size = new System.Drawing.Size(120, 34);
+            this.playerListBoxUpdate.Size = new System.Drawing.Size(103, 30);
             this.playerListBoxUpdate.TabIndex = 37;
             this.playerListBoxUpdate.SelectedIndexChanged += new System.EventHandler(this.playerListBoxUpdate_SelectedIndexChanged);
             // 
             // gameListBoxUpdate
             // 
             this.gameListBoxUpdate.FormattingEnabled = true;
-            this.gameListBoxUpdate.ItemHeight = 15;
             this.gameListBoxUpdate.Items.AddRange(new object[] {
             "Game_ID",
             "Game_Title"});
-            this.gameListBoxUpdate.Location = new System.Drawing.Point(827, 176);
+            this.gameListBoxUpdate.Location = new System.Drawing.Point(709, 153);
             this.gameListBoxUpdate.Name = "gameListBoxUpdate";
-            this.gameListBoxUpdate.Size = new System.Drawing.Size(120, 34);
+            this.gameListBoxUpdate.Size = new System.Drawing.Size(103, 30);
             this.gameListBoxUpdate.TabIndex = 38;
             // 
             // gamemodeListBoxUpdate
             // 
             this.gamemodeListBoxUpdate.FormattingEnabled = true;
-            this.gamemodeListBoxUpdate.ItemHeight = 15;
             this.gamemodeListBoxUpdate.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Gamemode_Name"});
-            this.gamemodeListBoxUpdate.Location = new System.Drawing.Point(827, 176);
+            this.gamemodeListBoxUpdate.Location = new System.Drawing.Point(709, 153);
             this.gamemodeListBoxUpdate.Name = "gamemodeListBoxUpdate";
-            this.gamemodeListBoxUpdate.Size = new System.Drawing.Size(120, 34);
+            this.gamemodeListBoxUpdate.Size = new System.Drawing.Size(103, 30);
             this.gamemodeListBoxUpdate.TabIndex = 39;
             // 
             // gameTypeListUpdate
             // 
             this.gameTypeListUpdate.FormattingEnabled = true;
-            this.gameTypeListUpdate.ItemHeight = 15;
             this.gameTypeListUpdate.Items.AddRange(new object[] {
             "Gamemode_ID",
             "Game_ID",
             "Gametype_ExpectedTime"});
-            this.gameTypeListUpdate.Location = new System.Drawing.Point(827, 176);
+            this.gameTypeListUpdate.Location = new System.Drawing.Point(709, 153);
             this.gameTypeListUpdate.Name = "gameTypeListUpdate";
-            this.gameTypeListUpdate.Size = new System.Drawing.Size(120, 34);
+            this.gameTypeListUpdate.Size = new System.Drawing.Size(103, 30);
             this.gameTypeListUpdate.TabIndex = 40;
             // 
             // statTypeListUpdate
             // 
             this.statTypeListUpdate.FormattingEnabled = true;
-            this.statTypeListUpdate.ItemHeight = 15;
             this.statTypeListUpdate.Items.AddRange(new object[] {
             "StatType_ID",
             "StatType_Name"});
-            this.statTypeListUpdate.Location = new System.Drawing.Point(827, 176);
+            this.statTypeListUpdate.Location = new System.Drawing.Point(709, 153);
             this.statTypeListUpdate.Name = "statTypeListUpdate";
-            this.statTypeListUpdate.Size = new System.Drawing.Size(120, 34);
+            this.statTypeListUpdate.Size = new System.Drawing.Size(103, 30);
             this.statTypeListUpdate.TabIndex = 41;
             // 
             // statListBoxUpdate
             // 
             this.statListBoxUpdate.FormattingEnabled = true;
-            this.statListBoxUpdate.ItemHeight = 15;
             this.statListBoxUpdate.Items.AddRange(new object[] {
             "Player_ID",
             "Gametype_Gamemode_ID",
             "Gametype_Game_ID",
             "StatType_ID",
             "Stat_Value"});
-            this.statListBoxUpdate.Location = new System.Drawing.Point(827, 176);
+            this.statListBoxUpdate.Location = new System.Drawing.Point(709, 153);
             this.statListBoxUpdate.Name = "statListBoxUpdate";
-            this.statListBoxUpdate.Size = new System.Drawing.Size(120, 34);
+            this.statListBoxUpdate.Size = new System.Drawing.Size(103, 30);
             this.statListBoxUpdate.TabIndex = 42;
             // 
             // gameStatTypeListUpdate
             // 
             this.gameStatTypeListUpdate.FormattingEnabled = true;
-            this.gameStatTypeListUpdate.ItemHeight = 15;
             this.gameStatTypeListUpdate.Items.AddRange(new object[] {
             "GameStatType_ID",
             "GameStatType_Name"});
-            this.gameStatTypeListUpdate.Location = new System.Drawing.Point(827, 176);
+            this.gameStatTypeListUpdate.Location = new System.Drawing.Point(709, 153);
             this.gameStatTypeListUpdate.Name = "gameStatTypeListUpdate";
-            this.gameStatTypeListUpdate.Size = new System.Drawing.Size(120, 34);
+            this.gameStatTypeListUpdate.Size = new System.Drawing.Size(103, 30);
             this.gameStatTypeListUpdate.TabIndex = 43;
             // 
             // gameStatListUpdate
             // 
             this.gameStatListUpdate.FormattingEnabled = true;
-            this.gameStatListUpdate.ItemHeight = 15;
             this.gameStatListUpdate.Items.AddRange(new object[] {
             "Player_ID",
             "Game_ID",
             "GameStatType_ID",
             "GameStat_Value"});
-            this.gameStatListUpdate.Location = new System.Drawing.Point(827, 176);
+            this.gameStatListUpdate.Location = new System.Drawing.Point(709, 153);
             this.gameStatListUpdate.Name = "gameStatListUpdate";
-            this.gameStatListUpdate.Size = new System.Drawing.Size(120, 34);
+            this.gameStatListUpdate.Size = new System.Drawing.Size(103, 30);
             this.gameStatListUpdate.TabIndex = 44;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 322);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 279);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1068, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 130);
             this.dataGridView1.TabIndex = 45;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(260, 89);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label3.Location = new System.Drawing.Point(223, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 20);
             this.label3.TabIndex = 46;
@@ -591,7 +570,6 @@ namespace VideoGameDB_UI
             // uploadListBox
             // 
             this.uploadListBox.FormattingEnabled = true;
-            this.uploadListBox.ItemHeight = 15;
             this.uploadListBox.Items.AddRange(new object[] {
             "GameStat",
             "GameStatType",
@@ -602,9 +580,9 @@ namespace VideoGameDB_UI
             "Game",
             "Player",
             "Team"});
-            this.uploadListBox.Location = new System.Drawing.Point(517, 60);
+            this.uploadListBox.Location = new System.Drawing.Point(443, 52);
             this.uploadListBox.Name = "uploadListBox";
-            this.uploadListBox.Size = new System.Drawing.Size(223, 64);
+            this.uploadListBox.Size = new System.Drawing.Size(192, 56);
             this.uploadListBox.TabIndex = 47;
             this.uploadListBox.Visible = false;
             this.uploadListBox.SelectedIndexChanged += new System.EventHandler(this.uploadListBox_SelectedIndexChanged);
@@ -612,8 +590,8 @@ namespace VideoGameDB_UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(260, 210);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label4.Location = new System.Drawing.Point(223, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(311, 20);
             this.label4.TabIndex = 48;
@@ -624,9 +602,9 @@ namespace VideoGameDB_UI
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(579, 154);
+            this.checkBox1.Location = new System.Drawing.Point(496, 133);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 19);
+            this.checkBox1.Size = new System.Drawing.Size(93, 17);
             this.checkBox1.TabIndex = 49;
             this.checkBox1.Text = "Update table?";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -635,9 +613,9 @@ namespace VideoGameDB_UI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(895, 9);
+            this.button3.Location = new System.Drawing.Point(767, 8);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 34);
+            this.button3.Size = new System.Drawing.Size(159, 29);
             this.button3.TabIndex = 50;
             this.button3.Text = "Have a .csv file? Click here.";
             this.button3.UseVisualStyleBackColor = true;
@@ -645,9 +623,9 @@ namespace VideoGameDB_UI
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(895, 9);
+            this.button4.Location = new System.Drawing.Point(767, 8);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(185, 34);
+            this.button4.Size = new System.Drawing.Size(159, 29);
             this.button4.TabIndex = 51;
             this.button4.Text = "Go back to manual entry mode";
             this.button4.UseVisualStyleBackColor = true;
@@ -657,8 +635,8 @@ namespace VideoGameDB_UI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(260, 153);
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label11.Location = new System.Drawing.Point(223, 133);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(218, 20);
             this.label11.TabIndex = 52;
@@ -667,9 +645,9 @@ namespace VideoGameDB_UI
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 6);
+            this.button5.Location = new System.Drawing.Point(10, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(113, 27);
+            this.button5.Size = new System.Drawing.Size(97, 23);
             this.button5.TabIndex = 53;
             this.button5.Text = "Leave admin view";
             this.button5.UseVisualStyleBackColor = true;
@@ -678,8 +656,8 @@ namespace VideoGameDB_UI
             // deleteLabel
             // 
             this.deleteLabel.AutoSize = true;
-            this.deleteLabel.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteLabel.Location = new System.Drawing.Point(417, 180);
+            this.deleteLabel.Font = new System.Drawing.Font("Arial Narrow", 14.25F);
+            this.deleteLabel.Location = new System.Drawing.Point(357, 156);
             this.deleteLabel.Name = "deleteLabel";
             this.deleteLabel.Size = new System.Drawing.Size(302, 23);
             this.deleteLabel.TabIndex = 54;
@@ -688,10 +666,10 @@ namespace VideoGameDB_UI
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1095, 476);
+            this.ClientSize = new System.Drawing.Size(939, 413);
             this.Controls.Add(this.deleteLabel);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label11);

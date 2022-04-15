@@ -50,12 +50,14 @@ namespace VideoGameDB_UI
                         MySqlCommand command_two = new MySqlCommand("Insert Into Account Values ('" + det.Rows.Count + "','" + textBox1.Text + "','" + textBox2.Text + "');", connection);
                         connection.Open();
                         command_two.ExecuteNonQuery();
+                        connection.Close();
                         MessageBox.Show("Congrats on Signing Up");
                         form_rtn.Show();
                         this.Close();
                     }
                     else
                     {
+                        connection.Close();
                         MessageBox.Show("Your Passwords Dont Match");
                     }
                 }

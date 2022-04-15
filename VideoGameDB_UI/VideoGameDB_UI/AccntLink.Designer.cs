@@ -37,39 +37,39 @@
             // 
             // txt_Username
             // 
-            this.txt_Username.Location = new System.Drawing.Point(197, 85);
-            this.txt_Username.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Username.Location = new System.Drawing.Point(148, 55);
+            this.txt_Username.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(145, 27);
+            this.txt_Username.Size = new System.Drawing.Size(110, 20);
             this.txt_Username.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(18, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F);
+            this.label1.Location = new System.Drawing.Point(14, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(384, 29);
+            this.label1.Size = new System.Drawing.Size(303, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Link Account to a Player Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 87);
+            this.label2.Location = new System.Drawing.Point(49, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Player Username:";
             // 
             // btn_Link
             // 
-            this.btn_Link.Location = new System.Drawing.Point(151, 145);
-            this.btn_Link.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Link.Location = new System.Drawing.Point(114, 94);
+            this.btn_Link.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_Link.Name = "btn_Link";
-            this.btn_Link.Size = new System.Drawing.Size(118, 39);
+            this.btn_Link.Size = new System.Drawing.Size(93, 25);
             this.btn_Link.TabIndex = 3;
             this.btn_Link.Text = "Link to Account";
             this.btn_Link.UseVisualStyleBackColor = true;
@@ -77,9 +77,10 @@
             // 
             // bck_Btn
             // 
-            this.bck_Btn.Location = new System.Drawing.Point(328, 183);
+            this.bck_Btn.Location = new System.Drawing.Point(246, 115);
+            this.bck_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bck_Btn.Name = "bck_Btn";
-            this.bck_Btn.Size = new System.Drawing.Size(94, 29);
+            this.bck_Btn.Size = new System.Drawing.Size(70, 23);
             this.bck_Btn.TabIndex = 4;
             this.bck_Btn.Text = "Home";
             this.bck_Btn.UseVisualStyleBackColor = true;
@@ -87,16 +88,16 @@
             // 
             // AccntLink
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(434, 224);
+            this.ClientSize = new System.Drawing.Size(326, 146);
             this.Controls.Add(this.bck_Btn);
             this.Controls.Add(this.btn_Link);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Username);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "AccntLink";
             this.Text = "Account Link";
             this.ResumeLayout(false);

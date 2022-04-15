@@ -79,19 +79,21 @@ namespace VideoGameDB_UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(319, 24);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label1.Location = new System.Drawing.Point(239, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 32);
+            this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Team Options";
             // 
             // lbl_team
             // 
             this.lbl_team.AutoSize = true;
-            this.lbl_team.Location = new System.Drawing.Point(14, 57);
+            this.lbl_team.Location = new System.Drawing.Point(10, 37);
+            this.lbl_team.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_team.Name = "lbl_team";
-            this.lbl_team.Size = new System.Drawing.Size(187, 20);
+            this.lbl_team.Size = new System.Drawing.Size(138, 13);
             this.lbl_team.TabIndex = 3;
             this.lbl_team.Text = "Your Team: <Team_Name>";
             this.lbl_team.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,11 +104,11 @@ namespace VideoGameDB_UI
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(14, 81);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl1.Location = new System.Drawing.Point(10, 53);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(761, 425);
+            this.tabControl1.Size = new System.Drawing.Size(571, 276);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -115,11 +117,11 @@ namespace VideoGameDB_UI
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(753, 392);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tabPage1.Size = new System.Drawing.Size(563, 250);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Team Stats";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -127,11 +129,11 @@ namespace VideoGameDB_UI
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbx_Gamemode);
-            this.groupBox5.Location = new System.Drawing.Point(369, 19);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Location = new System.Drawing.Point(277, 12);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(163, 72);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox5.Size = new System.Drawing.Size(122, 47);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Gamemode";
@@ -140,21 +142,21 @@ namespace VideoGameDB_UI
             // 
             this.cbx_Gamemode.Enabled = false;
             this.cbx_Gamemode.FormattingEnabled = true;
-            this.cbx_Gamemode.Location = new System.Drawing.Point(13, 28);
-            this.cbx_Gamemode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cbx_Gamemode.Location = new System.Drawing.Point(10, 18);
+            this.cbx_Gamemode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbx_Gamemode.Name = "cbx_Gamemode";
-            this.cbx_Gamemode.Size = new System.Drawing.Size(145, 28);
+            this.cbx_Gamemode.Size = new System.Drawing.Size(110, 21);
             this.cbx_Gamemode.TabIndex = 1;
             this.cbx_Gamemode.SelectedIndexChanged += new System.EventHandler(this.cbx_Gamemode_SelectedIndexChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.cbx_Game);
-            this.groupBox4.Location = new System.Drawing.Point(16, 19);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(163, 72);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox4.Size = new System.Drawing.Size(122, 47);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Game";
@@ -163,21 +165,21 @@ namespace VideoGameDB_UI
             // 
             this.cbx_Game.Enabled = false;
             this.cbx_Game.FormattingEnabled = true;
-            this.cbx_Game.Location = new System.Drawing.Point(8, 28);
-            this.cbx_Game.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cbx_Game.Location = new System.Drawing.Point(6, 18);
+            this.cbx_Game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbx_Game.Name = "cbx_Game";
-            this.cbx_Game.Size = new System.Drawing.Size(149, 28);
+            this.cbx_Game.Size = new System.Drawing.Size(113, 21);
             this.cbx_Game.TabIndex = 0;
             this.cbx_Game.SelectedIndexChanged += new System.EventHandler(this.cbx_Game_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tbl_GmdStats);
-            this.groupBox3.Location = new System.Drawing.Point(369, 97);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox3.Location = new System.Drawing.Point(277, 63);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Size = new System.Drawing.Size(368, 275);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(276, 179);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gamemode Stats for Selected Game";
@@ -188,23 +190,23 @@ namespace VideoGameDB_UI
             this.tbl_GmdStats.AllowUserToDeleteRows = false;
             this.tbl_GmdStats.AllowUserToOrderColumns = true;
             this.tbl_GmdStats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_GmdStats.Location = new System.Drawing.Point(5, 24);
-            this.tbl_GmdStats.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbl_GmdStats.Location = new System.Drawing.Point(4, 16);
+            this.tbl_GmdStats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbl_GmdStats.Name = "tbl_GmdStats";
             this.tbl_GmdStats.ReadOnly = true;
             this.tbl_GmdStats.RowHeadersWidth = 82;
             this.tbl_GmdStats.RowTemplate.Height = 33;
-            this.tbl_GmdStats.Size = new System.Drawing.Size(355, 245);
+            this.tbl_GmdStats.Size = new System.Drawing.Size(266, 159);
             this.tbl_GmdStats.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tbl_GameStats);
-            this.groupBox2.Location = new System.Drawing.Point(16, 97);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox2.Location = new System.Drawing.Point(12, 63);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Size = new System.Drawing.Size(349, 275);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(262, 179);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Stats";
@@ -215,13 +217,13 @@ namespace VideoGameDB_UI
             this.tbl_GameStats.AllowUserToDeleteRows = false;
             this.tbl_GameStats.AllowUserToOrderColumns = true;
             this.tbl_GameStats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_GameStats.Location = new System.Drawing.Point(5, 24);
-            this.tbl_GameStats.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbl_GameStats.Location = new System.Drawing.Point(4, 16);
+            this.tbl_GameStats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbl_GameStats.Name = "tbl_GameStats";
             this.tbl_GameStats.ReadOnly = true;
             this.tbl_GameStats.RowHeadersWidth = 82;
             this.tbl_GameStats.RowTemplate.Height = 33;
-            this.tbl_GameStats.Size = new System.Drawing.Size(337, 245);
+            this.tbl_GameStats.Size = new System.Drawing.Size(253, 159);
             this.tbl_GameStats.TabIndex = 0;
             // 
             // tabPage2
@@ -231,11 +233,11 @@ namespace VideoGameDB_UI
             this.tabPage2.Controls.Add(this.btn_chngLeader);
             this.tabPage2.Controls.Add(this.tbl_members);
             this.tabPage2.Controls.Add(this.lbl_leader);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(753, 392);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tabPage2.Size = new System.Drawing.Size(563, 250);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Team Members";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -243,10 +245,10 @@ namespace VideoGameDB_UI
             // btn_delTeam
             // 
             this.btn_delTeam.Enabled = false;
-            this.btn_delTeam.Location = new System.Drawing.Point(55, 296);
-            this.btn_delTeam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_delTeam.Location = new System.Drawing.Point(41, 192);
+            this.btn_delTeam.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_delTeam.Name = "btn_delTeam";
-            this.btn_delTeam.Size = new System.Drawing.Size(98, 57);
+            this.btn_delTeam.Size = new System.Drawing.Size(74, 37);
             this.btn_delTeam.TabIndex = 4;
             this.btn_delTeam.Text = "Delete Team";
             this.btn_delTeam.UseVisualStyleBackColor = true;
@@ -256,10 +258,10 @@ namespace VideoGameDB_UI
             // btn_kick
             // 
             this.btn_kick.Enabled = false;
-            this.btn_kick.Location = new System.Drawing.Point(55, 189);
-            this.btn_kick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_kick.Location = new System.Drawing.Point(41, 116);
+            this.btn_kick.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_kick.Name = "btn_kick";
-            this.btn_kick.Size = new System.Drawing.Size(98, 57);
+            this.btn_kick.Size = new System.Drawing.Size(74, 53);
             this.btn_kick.TabIndex = 3;
             this.btn_kick.Text = "Kick Selected Member";
             this.btn_kick.UseVisualStyleBackColor = true;
@@ -269,10 +271,10 @@ namespace VideoGameDB_UI
             // btn_chngLeader
             // 
             this.btn_chngLeader.Enabled = false;
-            this.btn_chngLeader.Location = new System.Drawing.Point(55, 43);
-            this.btn_chngLeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_chngLeader.Location = new System.Drawing.Point(41, 28);
+            this.btn_chngLeader.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_chngLeader.Name = "btn_chngLeader";
-            this.btn_chngLeader.Size = new System.Drawing.Size(98, 96);
+            this.btn_chngLeader.Size = new System.Drawing.Size(74, 62);
             this.btn_chngLeader.TabIndex = 2;
             this.btn_chngLeader.Text = "Transfer Leadership to Selected Member";
             this.btn_chngLeader.UseVisualStyleBackColor = true;
@@ -284,21 +286,22 @@ namespace VideoGameDB_UI
             this.tbl_members.AllowUserToAddRows = false;
             this.tbl_members.AllowUserToDeleteRows = false;
             this.tbl_members.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_members.Location = new System.Drawing.Point(243, 43);
-            this.tbl_members.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbl_members.Location = new System.Drawing.Point(182, 28);
+            this.tbl_members.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbl_members.Name = "tbl_members";
             this.tbl_members.ReadOnly = true;
             this.tbl_members.RowHeadersWidth = 51;
             this.tbl_members.RowTemplate.Height = 25;
-            this.tbl_members.Size = new System.Drawing.Size(246, 337);
+            this.tbl_members.Size = new System.Drawing.Size(184, 219);
             this.tbl_members.TabIndex = 1;
             // 
             // lbl_leader
             // 
             this.lbl_leader.AutoSize = true;
-            this.lbl_leader.Location = new System.Drawing.Point(243, 19);
+            this.lbl_leader.Location = new System.Drawing.Point(182, 12);
+            this.lbl_leader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_leader.Name = "lbl_leader";
-            this.lbl_leader.Size = new System.Drawing.Size(238, 20);
+            this.lbl_leader.Size = new System.Drawing.Size(175, 13);
             this.lbl_leader.TabIndex = 0;
             this.lbl_leader.Text = "Team Leader: <Leader_Username>";
             // 
@@ -310,10 +313,10 @@ namespace VideoGameDB_UI
             this.tabPage3.Controls.Add(this.btn_search);
             this.tabPage3.Controls.Add(this.txt_teamSearch);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(753, 392);
+            this.tabPage3.Size = new System.Drawing.Size(563, 250);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Join/Leave Team";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -321,10 +324,10 @@ namespace VideoGameDB_UI
             // btn_join
             // 
             this.btn_join.Enabled = false;
-            this.btn_join.Location = new System.Drawing.Point(534, 247);
-            this.btn_join.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_join.Location = new System.Drawing.Point(400, 161);
+            this.btn_join.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_join.Name = "btn_join";
-            this.btn_join.Size = new System.Drawing.Size(85, 81);
+            this.btn_join.Size = new System.Drawing.Size(64, 53);
             this.btn_join.TabIndex = 5;
             this.btn_join.Text = "Join Selected Team";
             this.btn_join.UseVisualStyleBackColor = true;
@@ -333,10 +336,10 @@ namespace VideoGameDB_UI
             // btn_leave
             // 
             this.btn_leave.Enabled = false;
-            this.btn_leave.Location = new System.Drawing.Point(534, 76);
-            this.btn_leave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_leave.Location = new System.Drawing.Point(400, 49);
+            this.btn_leave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_leave.Name = "btn_leave";
-            this.btn_leave.Size = new System.Drawing.Size(85, 81);
+            this.btn_leave.Size = new System.Drawing.Size(64, 53);
             this.btn_leave.TabIndex = 4;
             this.btn_leave.Text = "Leave Current Team";
             this.btn_leave.UseVisualStyleBackColor = true;
@@ -347,21 +350,21 @@ namespace VideoGameDB_UI
             this.tbl_teams.AllowUserToAddRows = false;
             this.tbl_teams.AllowUserToDeleteRows = false;
             this.tbl_teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_teams.Location = new System.Drawing.Point(46, 76);
-            this.tbl_teams.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbl_teams.Location = new System.Drawing.Point(34, 49);
+            this.tbl_teams.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbl_teams.Name = "tbl_teams";
             this.tbl_teams.ReadOnly = true;
             this.tbl_teams.RowHeadersWidth = 51;
             this.tbl_teams.RowTemplate.Height = 25;
-            this.tbl_teams.Size = new System.Drawing.Size(294, 297);
+            this.tbl_teams.Size = new System.Drawing.Size(220, 193);
             this.tbl_teams.TabIndex = 3;
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(259, 32);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_search.Location = new System.Drawing.Point(194, 21);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(80, 36);
+            this.btn_search.Size = new System.Drawing.Size(60, 23);
             this.btn_search.TabIndex = 2;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -369,18 +372,19 @@ namespace VideoGameDB_UI
             // 
             // txt_teamSearch
             // 
-            this.txt_teamSearch.Location = new System.Drawing.Point(46, 37);
-            this.txt_teamSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_teamSearch.Location = new System.Drawing.Point(34, 24);
+            this.txt_teamSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_teamSearch.Name = "txt_teamSearch";
-            this.txt_teamSearch.Size = new System.Drawing.Size(159, 27);
+            this.txt_teamSearch.Size = new System.Drawing.Size(120, 20);
             this.txt_teamSearch.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 13);
+            this.label3.Location = new System.Drawing.Point(34, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Team Name";
             // 
@@ -390,10 +394,10 @@ namespace VideoGameDB_UI
             this.tabPage4.Controls.Add(this.btn_create);
             this.tabPage4.Controls.Add(this.txt_newTeamName);
             this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(753, 392);
+            this.tabPage4.Size = new System.Drawing.Size(563, 250);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Create/Edit Team";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -401,10 +405,10 @@ namespace VideoGameDB_UI
             // btn_chngTeamName
             // 
             this.btn_chngTeamName.Enabled = false;
-            this.btn_chngTeamName.Location = new System.Drawing.Point(379, 185);
-            this.btn_chngTeamName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_chngTeamName.Location = new System.Drawing.Point(284, 120);
+            this.btn_chngTeamName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_chngTeamName.Name = "btn_chngTeamName";
-            this.btn_chngTeamName.Size = new System.Drawing.Size(99, 59);
+            this.btn_chngTeamName.Size = new System.Drawing.Size(74, 38);
             this.btn_chngTeamName.TabIndex = 3;
             this.btn_chngTeamName.Text = "Change Team Name";
             this.btn_chngTeamName.UseVisualStyleBackColor = true;
@@ -413,10 +417,10 @@ namespace VideoGameDB_UI
             // btn_create
             // 
             this.btn_create.Enabled = false;
-            this.btn_create.Location = new System.Drawing.Point(226, 185);
-            this.btn_create.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_create.Location = new System.Drawing.Point(170, 120);
+            this.btn_create.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_create.Name = "btn_create";
-            this.btn_create.Size = new System.Drawing.Size(99, 59);
+            this.btn_create.Size = new System.Drawing.Size(74, 38);
             this.btn_create.TabIndex = 2;
             this.btn_create.Text = "Create Team";
             this.btn_create.UseVisualStyleBackColor = true;
@@ -424,27 +428,28 @@ namespace VideoGameDB_UI
             // 
             // txt_newTeamName
             // 
-            this.txt_newTeamName.Location = new System.Drawing.Point(333, 105);
-            this.txt_newTeamName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_newTeamName.Location = new System.Drawing.Point(250, 68);
+            this.txt_newTeamName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_newTeamName.Name = "txt_newTeamName";
-            this.txt_newTeamName.Size = new System.Drawing.Size(162, 27);
+            this.txt_newTeamName.Size = new System.Drawing.Size(122, 20);
             this.txt_newTeamName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 109);
+            this.label2.Location = new System.Drawing.Point(158, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 20);
+            this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "New Team Name:";
             // 
             // btn_Home
             // 
-            this.btn_Home.Location = new System.Drawing.Point(14, 515);
-            this.btn_Home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Home.Location = new System.Drawing.Point(10, 335);
+            this.btn_Home.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(125, 36);
+            this.btn_Home.Size = new System.Drawing.Size(94, 23);
             this.btn_Home.TabIndex = 5;
             this.btn_Home.Text = "Return to Home";
             this.btn_Home.UseVisualStyleBackColor = true;
@@ -452,10 +457,10 @@ namespace VideoGameDB_UI
             // 
             // btn_refresh
             // 
-            this.btn_refresh.Location = new System.Drawing.Point(685, 515);
-            this.btn_refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_refresh.Location = new System.Drawing.Point(514, 335);
+            this.btn_refresh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(86, 36);
+            this.btn_refresh.Size = new System.Drawing.Size(64, 23);
             this.btn_refresh.TabIndex = 5;
             this.btn_refresh.Text = "Refresh";
             this.btn_refresh.UseVisualStyleBackColor = true;
@@ -463,16 +468,16 @@ namespace VideoGameDB_UI
             // 
             // TeamPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(588, 365);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lbl_team);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "TeamPage";
             this.Text = "Team";
             this.tabControl1.ResumeLayout(false);
